@@ -3,34 +3,52 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Lohith Prasanna Teja Kakumanu's portfolio showcasing skills, projects, and experience as a Data Scientist and BI Engineer.">
-        <meta name="keywords" content="Lohith Prasanna Teja Kakumanu, Data Scientist, BI Engineer, Portfolio, Projects, Skills, Experience">
+        <meta name="description" content="Portfolio of Lohith Prasanna Teja Kakumanu, an applied AI engineer building production-ready LLM systems, data platforms, and machine learning solutions.">
+        <meta name="keywords" content="Lohith Prasanna Teja Kakumanu, Applied AI Engineer, Data Scientist, LLM, AI Systems, MLOps, Portfolio">
         <title>lohithpr</title> <!-- Updated title -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500;700&display=swap">
         <link rel="stylesheet" href="styles.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
         <script src="script.js" defer></script>
-        <link rel="icon" type="image/png" href="icons/logo.png"> <!-- Favicon link -->
+        <link rel="icon" type="image/svg+xml" href="icons/brand-mark.svg">
     </head>
     
 <body>
     <nav>
         <a href="#home" id="logo" aria-label="Home">
-            <img src="icons/logo.png" alt="Logo">
+            <img src="icons/brand-mark.svg" alt="Brand mark: neural network layers and signal">
         </a>
         <ul>
             <li><a href="#home" aria-label="Home">Home</a></li>
             <li><a href="#about" aria-label="About Me">About Me</a></li>
             <li><a href="#skills" aria-label="Skills">Skills</a></li>
+            <li><a href="#approach" aria-label="Approach">Approach</a></li>
             <li><a href="#experience" aria-label="Experience">Experience</a></li>
             <li><a href="#projects" aria-label="Projects">Projects</a></li>
             <li><a href="#contact" aria-label="Contact">Contact</a></li>
             <li><a href="#" aria-label="Resume" class="glow" id="resume-link">Resume</a></li>
             <li class="dropdown">
-                <a href="#" aria-label="More" id="more-link">&#x25BC;</a>
+                <a href="#" aria-label="More" id="more-link">More
+                    <svg class="more-arrow" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1.5l5 5 5-5"/></svg>
+                </a>
                 <div class="dropdown-content">
-                    <a href="#" id="achievements-link" aria-label="Achievements">Achievements &#x1F3C6;</a>
-                    <a href="#" id="info-link" aria-label="Information">Info &#x2139;</a>
+                    <a href="#" id="achievements-link" aria-label="Achievements">
+                        <svg class="dropdown-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4.5 2h9v5.5a4.5 4.5 0 0 1-9 0V2z"/>
+                            <path d="M4.5 4H2.5v.6c0 1.8.9 3.1 2 3.7"/>
+                            <path d="M13.5 4h2v.6c0 1.8-.9 3.1-2 3.7"/>
+                            <path d="M9 12.5v3.5M6.5 16h5"/>
+                        </svg>
+                        <span class="dropdown-label">Achievements</span>
+                    </a>
+                    <a href="#" id="info-link" aria-label="Information">
+                        <svg class="dropdown-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                            <circle cx="9" cy="9" r="7"/>
+                            <line x1="9" y1="8.5" x2="9" y2="12.5"/>
+                            <circle cx="9" cy="6" r="0.7" fill="currentColor" stroke="none"/>
+                        </svg>
+                        <span class="dropdown-label">Site Info</span>
+                    </a>
                 </div>
             </li>
         </ul>
@@ -39,284 +57,533 @@
     <section id="home" class="fade-in">
         <div class="intro">
             <h1>Lohith Prasanna Teja Kakumanu</h1>
-            <p>Data Scientist and BI Engineer</p>
+            <p class="intro-role">Senior Data Scientist</p>
+            <p class="intro-tagline">I build production-ready AI systems that combine machine learning, data engineering, and evaluation-first design to solve high-impact business problems.</p>
+            <div class="hero-highlights">
+                <span>LLM Applications</span>
+                <span>Agent Orchestration</span>
+                <span>Evaluation Frameworks</span>
+                <span>Production AI Architecture</span>
+            </div>
             <img src="profile.jpg" alt="Lohith Prasanna Teja Kakumanu">
         </div>
     </section>
 
     <section id="about" class="fade-in about-section">
         <div class="about-content">
-            <h1 class="hello-text">Hello!</h1>
+            <h1 class="hello-text">
+                <span class="hero-line hello-line">Hello!</span>
+                <span class="hero-line systems-line">I build AI systems that work beyond the demo.</span>
+            </h1>
             <div class="about-description">
-                <h2>About Me</h2>
+                <h2>About</h2>
                 <p>
-                    I am a passionate Data Scientist and BI Engineer with a robust technical foundation in data science and analytics.
-                    My journey in the tech world began with a strong interest in data and its potential to drive business decisions. Over the years,
-                    I have honed my skills in various domains, including data analysis, machine learning, and business intelligence.
-                    I strive to stay abreast of the latest trends and technologies to provide innovative solutions that can transform business operations and enhance decision-making processes.
+                    I'm a Senior Data Scientist at Orion Innovation, currently engaged on a B2B program with PwC. I build AI systems: LLM applications, agent workflows, and evaluation pipelines, with a focus on reliability, interpretability, and real-world constraints.
                 </p>
                 <p>
-                    Beyond my professional life, I enjoy playing the piano, which helps me relax and unwind. I also love hiking and exploring nature, which keeps me energized and inspired.
+                    My work spans cross-domain problems in financial risk, compliance, and blockchain analytics, across Fannie Mae, CryptoClear, University at Buffalo, and Infosys. I enjoy going beyond modeling: thinking about data pipelines, evaluation frameworks, and how decisions driven by models translate into measurable outcomes.
                 </p>
-                <p>Hands-on industry-level projects and personal projects(shown in later sections) driven by my interests have given me the confidence to apply data science solutions to various problem scenarios across multiple domains such as supply chain, time series analysis, healthcare, finance, and more. The insights gained from these projects have enabled me to tackle complex business challenges and contribute effectively to organizational success.</p>
+                <ul class="about-principles">
+                    <li><strong>System over model:</strong> data quality and evaluation design decide outcomes, not model choice alone.</li>
+                    <li><strong>Business-context first:</strong> every technical decision should connect to a real user or outcome.</li>
+                    <li><strong>Measure what matters:</strong> reproducible evaluation and honest failure analysis over polished demos.</li>
+                </ul>
+                <div class="personal-philosophy">
+                    <p>I'm particularly drawn to problems where the data is messy, objectives are unclear, and there is no predefined path. That is where strong problem framing and first-principles thinking matter most.</p>
+                    <p>A lot of how I think is shaped by the people around me: researchers, colleagues, and the companies I work with. I try to understand their perspective first, go deep on the domain, and stay curious enough to connect threads across fields.</p>
+                    <p>Outside of work, I play piano and spend time in nature. It helps me reset and think more clearly.</p>
+                </div>
+
+                <div class="glimpse-section">
+                    <button class="glimpse-toggle" id="glimpse-toggle" aria-expanded="false" aria-controls="glimpse-body">
+                        <span class="glimpse-toggle-left">
+                            <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11.5l3.5-4.5 2.5 3 2-2.5 4 5.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><rect x="1" y="1.5" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.3"/></svg>
+                            a glimpse
+                        </span>
+                        <svg class="glimpse-chevron" aria-hidden="true" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="glimpse-body collapsed" id="glimpse-body">
+                        <div class="glimpse-scatter" aria-label="Personal photos gallery">
+                            <button class="glimpse-photo" style="--r:-4deg;--tx:0px;--ty:4px" data-src="images/Personal/event1.jpeg" data-caption="Event" aria-label="View photo: Event">
+                                <img src="images/Personal/event1.jpeg" alt="Personal event">
+                            </button>
+                            <button class="glimpse-photo" style="--r:3deg;--tx:2px;--ty:-2px" data-src="images/Personal/event2.jpeg" data-caption="Event" aria-label="View photo: Event">
+                                <img src="images/Personal/event2.jpeg" alt="Personal event">
+                            </button>
+                            <button class="glimpse-photo" style="--r:-2deg;--tx:-4px;--ty:6px" data-src="images/Personal/event3.jpeg" data-caption="Event" aria-label="View photo: Event">
+                                <img src="images/Personal/event3.jpeg" alt="Personal event">
+                            </button>
+                            <button class="glimpse-photo" style="--r:5deg;--tx:3px;--ty:-4px" data-src="images/Personal/event4.jpeg" data-caption="Event" aria-label="View photo: Event">
+                                <img src="images/Personal/event4.jpeg" alt="Personal event">
+                            </button>
+                            <button class="glimpse-photo" style="--r:-3deg;--tx:-2px;--ty:2px" data-src="images/Personal/orion desk setup.jpeg" data-caption="Desk setup" aria-label="View photo: Desk setup">
+                                <img src="images/Personal/orion desk setup.jpeg" alt="Desk setup at Orion">
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="fade-in">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/python.png" alt="Python">
-                        <h3>Python</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>Python is used for data analysis, machine learning, and automation. It's versatile and has a large ecosystem of libraries.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/R.png" alt="R">
-                        <h3>R</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>R is used for statistical analysis and data visualization. It excels in bioinformatics and exploratory data analysis.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/SQL.png" alt="SQL">
-                        <h3>SQL</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>SQL is used to manage and query relational databases. It's essential for handling large datasets and performing complex queries.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/Java.png" alt="Java">
-                        <h3>Java</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>Java is used for building scalable and high-performance applications. It's known for its portability and extensive libraries.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/EDA.png" alt="EDA">
-                        <h3>EDA</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>Exploratory Data Analysis (EDA) helps in understanding the data and uncovering patterns, ensuring data quality and guiding further analysis.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/NLP.png" alt="NLP">
-                        <h3>NLP</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>Natural Language Processing (NLP) is used to analyze and understand human language data, crucial for applications like sentiment analysis and chatbots.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/ML.png" alt="Machine Learning">
-                        <h3>Machine Learning</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>Machine learning is used to build predictive models and algorithms, enabling data-driven decision making in various industries.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/DL.png" alt="Deep Learning">
-                        <h3>Deep Learning</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>Deep learning is used for advanced machine learning tasks like image and speech recognition, leveraging neural networks.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/BigData.png" alt="Big Data">
-                        <h3>Big Data</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>Big Data technologies like Hadoop and Spark are used for processing large datasets, providing scalability and efficiency.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/DV.png" alt="Data Visualization">
-                        <h3>Data Visualization</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>Data visualization tools like Power BI and Tableau are used to create interactive dashboards, making data insights accessible and understandable.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/cc.png" alt="Cloud Computing">
-                        <h3>Cloud Computing</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>Cloud platforms like AWS and Azure are used for deploying and scaling applications, offering flexibility and cost-effectiveness.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-inner">
-                    <div class="skill-front">
-                        <img src="icons/Research.png" alt="Research Skills">
-                        <h3>Research Skills</h3>
-                    </div>
-                    <div class="skill-back">
-                        <p>Research skills are essential for conducting experiments, analyzing results, and advancing knowledge in various domains.</p>
-                    </div>
-                </div>
+    <!-- Lightbox for personal glimpse gallery -->
+    <div id="glimpse-lightbox" class="glimpse-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <button class="glimpse-lb-close" id="glimpse-lb-close" aria-label="Close photo viewer">&times;</button>
+        <button class="glimpse-lb-nav glimpse-lb-prev" id="glimpse-lb-prev" aria-label="Previous photo">&#8249;</button>
+        <div class="glimpse-lb-stage">
+            <img src="" alt="" id="glimpse-lb-img" class="glimpse-lb-img">
+            <p class="glimpse-lb-caption" id="glimpse-lb-caption"></p>
+            <div class="glimpse-lb-nav-row">
+                <button class="glimpse-lb-nav glimpse-lb-prev-mob" id="glimpse-lb-prev-mob" aria-label="Previous photo">&#8249;</button>
+                <button class="glimpse-lb-nav glimpse-lb-next-mob" id="glimpse-lb-next-mob" aria-label="Next photo">&#8250;</button>
             </div>
         </div>
+        <button class="glimpse-lb-nav glimpse-lb-next" id="glimpse-lb-next" aria-label="Next photo">&#8250;</button>
+    </div>
+
+    <section id="skills" class="fade-in">
+        <h2>Technical Strengths</h2>
+        <p class="section-intro">I focus on the full AI lifecycle, from business framing to production operation.</p>
+        <div class="skills-groups">
+            <article class="skill-group">
+                <h3>Statistics and Analytics</h3>
+                <p>Cause-and-effect reasoning, hypothesis testing, variance analysis, correlation modeling, and regression. The grounding that shapes how I read data before touching a model.</p>
+            </article>
+            <article class="skill-group">
+                <h3>Machine Learning</h3>
+                <p>Predictive modeling, anomaly detection, NLP, graph learning, and multimodal experimentation built around real-world constraints and interpretability requirements.</p>
+            </article>
+            <article class="skill-group">
+                <h3>AI Systems</h3>
+                <p>LLM applications, agent orchestration, retrieval workflows, tool integration, guardrails, and evaluation-driven iteration from prototype to production.</p>
+            </article>
+            <article class="skill-group">
+                <h3>Data Engineering</h3>
+                <p>Reliable pipelines, feature-ready datasets, validation layers, and data workflows designed for reproducibility, auditability, and speed.</p>
+            </article>
+            <article class="skill-group">
+                <h3>Cloud and Infrastructure</h3>
+                <p>AWS and Azure deployment patterns, SageMaker, monitoring, performance optimization, and architecture decisions that hold up under production load.</p>
+            </article>
+        </div>
     </section>
-    
+
+    <section id="approach" class="fade-in approach-section">
+        <h2>How I Build AI Systems</h2>
+        <p class="section-intro">My process is designed to keep research quality and production reality aligned.</p>
+        <div class="approach-grid">
+            <article class="approach-step">
+                <h3>1. Problem Framing</h3>
+                <p>Translate business goals into technical objectives, constraints, and measurable success criteria.</p>
+            </article>
+            <article class="approach-step">
+                <h3>2. Data Understanding</h3>
+                <p>Audit source reliability, identify leakage and bias risks, and shape data contracts early.</p>
+            </article>
+            <article class="approach-step">
+                <h3>3. Modeling Strategy</h3>
+                <p>Select model and architecture by trade-offs: quality, latency, cost, interpretability, and failure modes.</p>
+            </article>
+            <article class="approach-step">
+                <h3>4. Evaluation</h3>
+                <p>Build reproducible benchmarks with business-relevant metrics, edge-case tests, and error analysis loops.</p>
+            </article>
+            <article class="approach-step">
+                <h3>5. Deployment and Feedback</h3>
+                <p>Ship with observability, monitor drift and reliability, then close the loop with iterative improvements.</p>
+            </article>
+        </div>
+    </section>
+
 
     <section id="experience" class="fade-in">
         <h2>Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-icon"><img src="icons/data-science-icon.png" alt="Data Science Icon"></div>
-                <div class="timeline-content" data-date="July 2022 – August 2023">
-                    <h3>Data Scientist, Infosys</h3>
-                    <ul>
-                        <li>Utilized clustering algorithms (K-means, DBSCAN) and principal component analysis (PCA) to segment customers, leading to targeted marketing strategies and a 20% increase in customer engagement.</li>
-                        <li>Involved in development and fine-tuning ARIMA, Prophet, and LSTM models for sales forecasting, resulting in a 20% improvement in forecast accuracy.</li>
-                        <li>Developed predictive models that reduced patient readmission rates by 20%, enabling early identification of high-risk patients and personalized interventions.</li>
-                        <li>Designed and conducted A/B tests to evaluate the impact of new features and marketing strategies, providing data-driven recommendations that increased conversion rates by 10%.</li>
-                        <li>Conducted performance tuning and optimization of Power BI reports, reducing load times by 20% and improving user experience.</li>    
-                        <li>Involved in the development and documentation of a generative AI chatbot using transformer-based models like GPT-3, significantly enhancing customer satisfaction by 15% and reducing the support workload through automated, intelligent responses in a high-impact client project.</li>
-                        <li>Enhanced the accuracy of sentiment analysis from 88% to 95% using cutting-edge natural language processing (NLP) and transformer models in a global employee feedback analysis initiative, leading to substantial cost savings.</li>
-                    </ul>
-                </div>
+        <p class="section-intro">I architect production AI systems for messy, high-stakes environments where data quality, reliability, and decision speed all matter at once.</p>
+        <div class="domain-showcase" aria-label="Domains worked across">
+            <p class="domain-showcase-title">Domain Coverage</p>
+            <div class="domain-chips">
+                <span>Financial Services</span>
+                <span>Risk & Compliance</span>
+                <span>Fraud & Blockchain</span>
+                <span>Enterprise AI Platforms</span>
+                <span>Applied Research</span>
+                <span>Data & MLOps Systems</span>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-icon"><img src="icons/bi-engineer-icon.png" alt="BI Engineer Icon"></div>
-                <div class="timeline-content" data-date="November 2020 – July 2022">
-                    <h3>Data Science and BI Engineer, Infosys</h3>
-                    <ul>
-                        <li>Created predictive models using ensemble learning techniques (Random Forest, Gradient Boosting) in healthcare projects, achieving a 20% reduction in patient readmission rates by identifying high-risk patients early.</li>
-                        <li>Conducted complex data analysis and visualization using Python (pandas, scikit-learn, matplotlib) and R (ggplot2, caret), providing actionable insights to business leaders.</li>
-                        <li>Led data modeling and SQL optimization projects, enhancing data quality by 25% in several enterprise-level systems.</li>
-                        <li>Developed DAX measures and enforced row-level security, enhancing report performance and reliability.</li>
-                        <li>Streamlined ETL processes integrating data from multiple sources, enhancing efficiency by 12%.</li>
-                        <li>Engineered multi-dimensional data models and OLAP cubes for enterprise business intelligence solutions, optimizing schema design and enhancing user experience by 15% in executive dashboards.</li>
-                        
-                    </ul>
-                </div>
+        </div>
+        <div class="experience-summary">
+            <div class="experience-stat">
+                <span class="stat-value">6+ Years</span>
+                <span class="stat-label">Total Experience (Sep 2019 - Present)</span>
             </div>
+            <div class="experience-stat stat-orgs">
+                <span class="stat-value">5 Orgs</span>
+                <span class="stat-label">FinTech, AI Platforms, Research, Enterprise Data</span>
+            </div>
+        </div>
+        <div class="experience-timeline">
+            <article class="experience-entry orion-entry">
+                <div class="experience-logo-wrap">
+                    <img src="images/PwC.png" alt="PwC Logo" class="experience-logo orion-dynamic-logo" data-front-logo="images/PwC.png" data-back-logo="images/Orion Logo.jpg">
+                </div>
+                <div class="experience-story">
+                    <div class="experience-headline">
+                        <div class="experience-title-wrap">
+                            <div class="orion-client-flip" tabindex="0" aria-label="Orion Innovation and PwC client association">
+                                <div class="orion-client-flip-inner">
+                                    <div class="orion-client-flip-face orion-client-front">
+                                        <a class="flip-icon-link" href="https://jobs.us.pwc.com/search-jobs/data%20sci/932/1?fl=6252001" target="_blank" rel="noopener noreferrer">
+                                            <img src="images/PwC.png" alt="PwC Careers">
+                                        </a>
+                                        <a class="flip-text-link" href="https://www.pwc.com/us/en/leadingedge.html?WT.mc_id=TC3-PL300_US_03FY26_AW_PM_DM_PM_XB-XBR_XLOS-FW_SYC-PAID-SEARCH-GOOGLE&gclsrc=aw.ds&gad_source=1&gad_campaignid=22496735884&gbraid=0AAAAABTtm-KKH_zip97kVdwi4H2FjOCZy&gclid=CjwKCAjw-J3OBhBuEiwAwqZ_h7E6FjbPF5IYOK6JDwWas5E8If7lhoggSLxEPD0IWkuxulEQ83UHfRoCcLEQAvD_BwE" target="_blank" rel="noopener noreferrer">PwC</a>
+                                    </div>
+                                    <div class="orion-client-flip-face orion-client-back">
+                                        <a class="flip-icon-link" href="https://www.orioninc.com/careers/jobs/?_job_location=edison-nj" target="_blank" rel="noopener noreferrer">
+                                            <img src="images/Orion Logo.jpg" alt="Orion Careers">
+                                        </a>
+                                        <a class="flip-text-link" href="https://www.orioninc.com/" target="_blank" rel="noopener noreferrer">Orion Innovation</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="company-link-row orion-link-row">
+                                <span class="orion-link-set pwc-links">
+                                    <a href="https://jobs.us.pwc.com/search-jobs/data%20sci/932/1?fl=6252001" target="_blank" rel="noopener noreferrer">Careers ↗</a>
+                                </span>
+                                <span class="orion-link-set orion-links">
+                                    <a href="https://www.orioninc.com/careers/jobs/?_job_location=edison-nj" target="_blank" rel="noopener noreferrer">Careers ↗</a>
+                                </span>
+                            </div>
+                            <p class="experience-role">Senior Data Scientist</p>
+                        </div>
+                        <span class="experience-duration">Dec 2025 - Present</span>
+                    </div>
+                    <div class="experience-business-note">The work wasn't building a chatbot. It was designing the architecture that lets an enterprise actually ship one.</div>
+                    <div class="impact-lines">
+                        <p><strong>Beyond chatbots:</strong> the real scope was system design — how retrieval, orchestration, evaluation, and governance layers connect into something an enterprise can run, audit, and trust.</p>
+                        <p><strong>Demo to MVP to production:</strong> moved fast, but every prototype decision was a future production constraint. Speed without architectural discipline just accelerates the wrong thing.</p>
+                        <p><strong>Architecture over features:</strong> agent workflows break at ambiguity, not at capability. Designed the containment layer first — what the system does when it doesn't know, not just when it does.</p>
+                        <p><strong>The actual hard problem:</strong> trace visibility, policy-aware retrieval, and evaluation pipelines aren't bolt-ons. They have to be designed in — retrofitting observability into a live system is far more expensive than building it right.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="experience-entry">
+                <div class="experience-logo-wrap">
+                    <img src="images/FannieMae.png" alt="Fannie Mae Logo" class="experience-logo logo-wide-badge">
+                </div>
+                <div class="experience-story">
+                    <div class="experience-headline">
+                        <div class="experience-title-wrap">
+                            <h3 class="company-title">
+                                <a class="company-apply-link" href="https://www.fanniemae.com/careers/search-all-jobs" target="_blank" rel="noopener noreferrer">
+                                    <img src="images/FannieMae.png" alt="Fannie Mae Careers" class="inline-company-logo logo-wide">
+                                </a>
+                                <a class="company-site-link" href="https://www.fanniemae.com/" target="_blank" rel="noopener noreferrer">Fannie Mae</a>
+                            </h3>
+                            <div class="company-link-row">
+                                <a href="https://www.fanniemae.com/careers/search-all-jobs" target="_blank" rel="noopener noreferrer">Careers ↗</a>
+                            </div>
+                            <p class="experience-role">Data Science Engineer</p>
+                        </div>
+                        <span class="experience-duration">Feb 2025 - Oct 2025</span>
+                    </div>
+                    <div class="experience-business-note">In regulated finance, confident and wrong has consequences. Every design decision was filtered through that.</div>
+                    <div class="impact-lines">
+                        <p><strong>Anomaly detection:</strong> explainability-first — a flagged loan needed to be immediately traceable by an analyst, not just accurate in aggregate.</p>
+                        <p><strong>Policy retrieval:</strong> policy documents contradict and overlap in ways that fool standard RAG. The real problem was hallucination suppression, not answer quality.</p>
+                        <p><strong>Platform integration:</strong> 15+ internal systems not designed to communicate. Built the orchestration layer that made capital runs reliable end-to-end — treating every handoff as a potential failure surface.</p>
+                        <p><strong>Validation posture:</strong> designed to surface what the model doesn't know — traceable uncertainty, not an aggregate metric that passes.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="experience-entry">
+                <div class="experience-logo-wrap">
+                    <img src="images/Cryptoclear Inc.jpg" alt="CryptoClear Logo" class="experience-logo">
+                </div>
+                <div class="experience-story">
+                    <div class="experience-headline">
+                        <div class="experience-title-wrap">
+                            <h3 class="company-title">
+                                <span class="company-static-icon">
+                                    <img src="images/Cryptoclear Inc.jpg" alt="CryptoClear Logo" class="inline-company-logo">
+                                </span>
+                                <a class="company-site-link" href="https://cryptoclear.ai/" target="_blank" rel="noopener noreferrer">CryptoClear</a>
+                            </h3>
+                            <p class="experience-role">Applied Scientist</p>
+                        </div>
+                        <span class="experience-duration">May 2024 - Apr 2025</span>
+                    </div>
+                    <div class="experience-business-note">Crypto fraud is adversarial, not just anomalous. Patterns shift within days of detection — everything was designed around that assumption.</div>
+                    <div class="impact-lines">
+                        <p><strong>Data truth first:</strong> detection built on inconsistent multi-provider data produces confident wrong models. Established ground truth before any modeling.</p>
+                        <p><strong>Graph structure:</strong> coordinated fraud lives in wallet networks and time-sequenced moves, not individual transactions. Transaction-level models miss the pattern entirely.</p>
+                        <p><strong>Iteration over accuracy:</strong> a system that can adapt to shifting fraud patterns beats one that's accurate but slow to retrain.</p>
+                        <p><strong>Analyst lag:</strong> the gap between "model flagged" and "analyst acts" is where bad actors escape. Closing that lag mattered as much as detection performance.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="experience-entry">
+                <div class="experience-logo-wrap">
+                    <img src="images/UB.jpg" alt="University at Buffalo Logo" class="experience-logo logo-wide-badge">
+                </div>
+                <div class="experience-story">
+                    <div class="experience-headline">
+                        <div class="experience-title-wrap">
+                            <h3 class="company-title">
+                                <span class="company-static-icon">
+                                    <img src="images/UB.jpg" alt="University at Buffalo Logo" class="inline-company-logo">
+                                </span>
+                                <a class="company-site-link" href="https://www.buffalo.edu/" target="_blank" rel="noopener noreferrer">University at Buffalo</a>
+                            </h3>
+                            <p class="experience-role">Research Scientist</p>
+                        </div>
+                        <span class="experience-duration">Oct 2023 - May 2025</span>
+                    </div>
+                    <div class="impact-lines">
+                        <p><strong>The failure mode that matters:</strong> models that fail silently — high confidence, wrong output — under distribution shift. Those are the dangerous ones in deployment.</p>
+                        <p><strong>Measurable robustness:</strong> exhaustive input testing isn't tractable. Built a sampling strategy that estimates robustness coverage honestly, including its own limits.</p>
+                        <p><strong>Fine-tuning as a probe:</strong> used VQA fine-tuning to observe degradation behavior under perturbation — not to chase benchmark numbers, but to map where these models break.</p>
+                        <p><strong>Production framing:</strong> outputs structured as evaluation templates for teams deploying under real distribution shift — not academic findings that don't transfer.</p>
+                    </div>
+                    <a class="research-publication" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=FMuN3M4AAAAJ&citation_for_view=FMuN3M4AAAAJ:u-x6o8ySG0sC" target="_blank" rel="noopener noreferrer">
+                        <span class="publication-kicker">Thesis Publication</span>
+                        <span class="publication-title">Read the University at Buffalo research publication on Google Scholar</span>
+                        <span class="publication-link">View publication ↗</span>
+                    </a>
+                </div>
+            </article>
+
+            <article class="experience-entry">
+                <div class="experience-logo-wrap">
+                    <img src="images/Infosys.png" alt="Infosys Logo" class="experience-logo logo-wide-badge">
+                </div>
+                <div class="experience-story">
+                    <div class="experience-headline">
+                        <div class="experience-title-wrap">
+                            <h3 class="company-title">
+                                <a class="company-apply-link" href="https://digitalcareers.infosys.com/infosys/global-careers?location=USA&interest_group=Infosys+Limited&keyword=data+sci" target="_blank" rel="noopener noreferrer">
+                                    <img src="images/Infosys.png" alt="Infosys Careers" class="inline-company-logo">
+                                </a>
+                                <a class="company-site-link" href="https://www.infosys.com/" target="_blank" rel="noopener noreferrer">Infosys</a>
+                            </h3>
+                            <div class="company-link-row">
+                                <a href="https://digitalcareers.infosys.com/infosys/global-careers?location=USA&interest_group=Infosys+Limited&keyword=data+sci" target="_blank" rel="noopener noreferrer">Careers ↗</a>
+                            </div>
+                            <div class="infosys-roles">
+                                <p><strong>Data Scientist</strong> <span>(Jul 2021 - Aug 2023)</span></p>
+                                <p><strong>Data Science and BI Engineer</strong> <span>(Sep 2019 - Jul 2021)</span></p>
+                            </div>
+                        </div>
+                        <span class="experience-duration">Sep 2019 - Aug 2023</span>
+                    </div>
+                    <div class="experience-business-note">Four years across two chapters: built the data infrastructure first, then used it as a launchpad for NLP, Gen AI, and causal modeling work that ran in production.</div>
+                    <div class="impact-lines">
+                        <p><strong>Customer risk intelligence:</strong> re-engineered sentiment analysis pipelines with NLP and Transformers, pushing model accuracy from <strong>88% to 95%</strong> for customer risk profiling, shipped and monitored in production.</p>
+                        <p><strong>Gen AI, early:</strong> designed and deployed a generative AI chatbot using advanced NLP, improving customer interaction satisfaction by <strong>15%</strong> and reducing support load across teams.</p>
+                        <p><strong>LLM tooling:</strong> built auto-tagging pipelines for LLM training data that cut manual labeling effort by <strong>60%</strong> and compressed model iteration cycles significantly.</p>
+                        <p><strong>Causal modeling:</strong> applied Propensity Score Matching and Difference-in-Differences to evaluate employee retention strategies, improving decision-making accuracy by <strong>15%</strong> and quantifying attrition risk for leadership.</p>
+                        <p><strong>Data engineering foundation:</strong> led ETL pipelines, SQL optimization, and data modeling that improved data quality by <strong>25%</strong> and accessibility by <strong>35%</strong>; designed and tuned 10+ Power BI dashboards with DAX and Row-Level Security, cutting load times by <strong>20%</strong>.</p>
+                        <p><strong>Recognition:</strong> awarded the <strong>INFY-RISE Award</strong> for exemplary leadership and execution on a business-critical project.</p>
+                    </div>
+                </div>
+            </article>
         </div>
     </section>
     
     <section id="projects" class="fade-in">
-        <h2>Projects</h2>
+        <h2>Selected Case Studies</h2>
+        <p class="section-intro">Personal work built on one discipline: understand the problem deeply before touching the model. Each project taught me how to frame, research, and communicate. Not just execute.</p>
         <div class="projects-container">
-            <div class="project-card slide-in">
-                <div class="role-box">Team Lead</div>
-                <img src="images/us_election.jpg" alt="US Presidential Election Sentiment Analysis">
-                <h3>US Presidential Election Sentiment Analysis</h3>
-                <p>
-                    This project analyzed public sentiment on Twitter to predict the winning candidate in the 2020 US Presidential Election using machine learning techniques.
-                    It involved extensive data analysis, feature engineering, and the implementation of various machine learning models including Random Forest, Decision Trees, and NLP techniques.
-                    Such a project demonstrates the power of social media analytics in understanding and forecasting political trends, which can be invaluable for political campaigns and market research firms.
-                </p>
-                <p><strong>Technologies:</strong> Python, NLP, Twitter API</p>
+            <div class="project-card">
+                <span class="project-year">2024</span>
+                <div class="role-box">Case Study</div>
+                <img src="images/applicant_tracking.jpg" alt="Applicant tracking workflow dashboard">
+                <h3>Applicant Tracking System</h3>
+                <p class="case-line"><strong>Problem:</strong> Recruiting teams needed faster, more reliable candidate screening and role-match insights across large resume volumes.</p>
+                <p class="case-line"><strong>Approach:</strong> Built an LLM-powered ATS workflow with <strong>LangChain</strong> orchestration for parsing, semantic matching, and structured candidate summaries.</p>
+                <p class="case-line"><strong>Impact:</strong> Reduced manual screening effort, improved shortlist relevance, and made hiring decisions more consistent and explainable.</p>
+                <p><strong>Tech:</strong> Python, LangChain, LLM APIs, vector search, prompt optimization</p>
                 <div class="tags">
-                    <span>#SentimentAnalysis</span><span>#NLP</span><span>#TwitterAPI</span>
+                    <span>#ApplicantTracking</span><span>#LangChain</span><span>#LLMOps</span>
                 </div>
             </div>
-            <div class="project-card slide-in">
-                <div class="role-box">Team Player</div>
-                <img src="images/crime_hotspots.jpg" alt="Predictive Analysis for Crime Hotspots">
+            <div class="project-card">
+                <span class="project-year">2020</span>
+                <div class="role-box">Case Study</div>
+                <img src="images/us_election.jpg" alt="Election forecasting dashboard">
+                <h3>Presidential Election Forecasting via Sentiment Analysis</h3>
+                <p class="case-line"><strong>Problem:</strong> Traditional forecasts often lag real-time sentiment shifts during volatile campaign cycles.</p>
+                <p class="case-line"><strong>Approach:</strong> Built Twitter sentiment analysis pipelines and integrated forecasting features to estimate election trend movement.</p>
+                <p class="case-line"><strong>Impact:</strong> Improved interpretability of political momentum signals and supported more responsive forecasting.</p>
+                <p><strong>Tech:</strong> Python, NLP, sentiment analysis, time-series modeling</p>
+                <a class="project-doc-link" href="documents/Presidential%20Election%20Forecasting%20based%20on%20%20Sentiment%20Analysis.pdf" target="_blank" rel="noopener noreferrer">View publication (PDF) ↗</a>
+                <div class="tags">
+                    <span>#ElectionForecasting</span><span>#SentimentAnalysis</span><span>#NLP</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <span class="project-year">2023</span>
+                <div class="role-box">Case Study</div>
+                <img src="images/crime_hotspots.jpg" alt="Crime hotspot prediction map">
                 <h3>Predictive Analysis for Crime Hotspots</h3>
-                <p>
-                    Leveraged predictive modeling to identify high-risk areas for crimes against women in India, assisting law enforcement in resource allocation.
-                    This project utilized data analysis and machine learning techniques to uncover patterns and insights from complex datasets. The implementation of such predictive models can significantly enhance public safety measures and optimize the deployment of law enforcement resources.
-                </p>
-                <p><strong>Technologies:</strong> Python, Scikit-learn, Pandas</p>
+                <p class="case-line"><strong>Problem:</strong> Public safety teams needed data-driven visibility into emerging high-risk zones instead of reactive response patterns.</p>
+                <p class="case-line"><strong>Approach:</strong> Built predictive modeling pipelines on historical incident and geospatial data to forecast hotspot intensity and location trends.</p>
+                <p class="case-line"><strong>Impact:</strong> Enabled earlier intervention planning, better resource allocation, and clearer hotspot trend communication.</p>
+                <p><strong>Tech:</strong> Python, geospatial analytics, predictive modeling, data visualization</p>
+                <a class="project-doc-link" href="documents/Crime%20against%20women.pdf" target="_blank" rel="noopener noreferrer">View findings (PDF) ↗</a>
                 <div class="tags">
-                    <span>#MachineLearning</span><span>#DataAnalysis</span><span>#Python</span>
+                    <span>#PredictiveAnalytics</span><span>#CrimeHotspots</span><span>#GeospatialAI</span>
                 </div>
             </div>
-            <div class="project-card slide-in">
-                <div class="role-box">Lead Engineer</div>
-                <img src="images/customer_segmentation.jpg" alt="Customer Segmentation">
-                <h3>Customer Segmentation</h3>
-                <p>
-                    Performed customer segmentation using clustering algorithms to help businesses tailor their marketing strategies and improve customer engagement.
-                    Techniques like K-Means clustering and data visualization were employed to identify distinct customer groups. Businesses can leverage such insights to create targeted marketing campaigns, enhance customer retention, and optimize product offerings.
-                </p>
-                <p><strong>Technologies:</strong> Python, Scikit-learn, K-Means</p>
-                <div class="tags">
-                    <span>#Clustering</span><span>#CustomerSegmentation</span><span>#Python</span>
-                </div>
-            </div>
-            <div class="project-card slide-in">
-                <div class="role-box">Team Player</div>
-                <img src="images/artifacts_detection.jpg" alt="Artifacts Detection using CNN">
+            <div class="project-card">
+                <span class="project-year">2022</span>
+                <div class="role-box">Case Study</div>
+                <img src="images/artifacts_detection.jpg" alt="Endoscopic artifact detection architecture diagram">
                 <h3>Artifacts Detection using CNN</h3>
-                <p>
-                    Implemented Convolutional Neural Networks (CNN) to detect artifacts in images, showcasing deep learning techniques in image processing and quality control.
-                    This project involved the use of TensorFlow and OpenCV for building and training the neural network models. Such applications are critical in industries like manufacturing, healthcare, and automotive, where image analysis and quality control are paramount.
-                </p>
-                <p><strong>Technologies:</strong> Python, TensorFlow, OpenCV</p>
+                <p class="case-line"><strong>Problem:</strong> Artifact-heavy endoscopic imagery reduced downstream diagnostic quality and model reliability.</p>
+                <p class="case-line"><strong>Approach:</strong> Implemented CNN-based artifact detection with TensorFlow and OpenCV, and applied <strong>Cascade R-CNN</strong> concepts for endoscopic image quality workflows.</p>
+                <p class="case-line"><strong>Impact:</strong> Improved artifact visibility and built a practical quality-control pipeline relevant to healthcare, manufacturing, and automotive imaging contexts.</p>
+                <p><strong>Tech:</strong> Python, TensorFlow, OpenCV, CNN, Cascade R-CNN</p>
                 <div class="tags">
-                    <span>#DeepLearning</span><span>#CNN</span><span>#ImageProcessing</span>
+                    <span>#ComputerVision</span><span>#CNN</span><span>#QualityControl</span>
                 </div>
             </div>
-            <div class="project-card slide-in">
-                <div class="role-box">Personal</div>
-                <img src="images/applicant_tracking.jpg" alt="Applicant Tracking System using LangChain">
-                <h3>Applicant Tracking System using LangChain</h3>
-                <p>
-                    Developed an Applicant Tracking System (ATS) to enhance resume content and streamline the job application process using natural language processing techniques.
-                    This project demonstrates the integration of NLP models and automation to improve HR processes, making it easier for companies to identify top talent and manage large volumes of job applications efficiently.
-                </p>
-                <p><strong>Technologies:</strong> Python, LangChain, NLP</p>
+            <div class="project-card">
+                <span class="project-year">2024</span>
+                <div class="role-box">Case Study</div>
+                <img src="images/interpretability-machine-learning.jpg" alt="Multimodal interpretability and robustness analysis">
+                <h3>Multimodal Robustness and Interpretability Research</h3>
+                <p class="case-line"><strong>Problem:</strong> Multimodal systems can fail silently under shifts, perturbations, and ambiguous visual-text combinations.</p>
+                <p class="case-line"><strong>Approach:</strong> Studied robustness patterns and interpretability behavior in multimodal deep learning architectures under controlled stress conditions.</p>
+                <p class="case-line"><strong>Impact:</strong> Produced reproducible findings that improve model-governance readiness and safer deployment decisions.</p>
+                <p><strong>Tech:</strong> PyTorch, multimodal deep learning, interpretability analysis, robustness evaluation</p>
+                <a class="project-doc-link" href="documents/EXPLORING%20ROBUSTNESS%20OF%20MULTIMODAL%20DEEP%20LEARNING%20ARCHITECTURE.pdf" target="_blank" rel="noopener noreferrer">View publication (PDF) ↗</a>
                 <div class="tags">
-                    <span>#NLP</span><span>#Automation</span><span>#ATS</span>
+                    <span>#MultimodalAI</span><span>#Robustness</span><span>#Interpretability</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <span class="project-year">2024</span>
+                <div class="role-box">Case Study</div>
+                <img src="images/Fraud%20detection%20in%20healthcare.jpg" alt="Healthcare fraud detection analytics">
+                <h3>Fraud Detection in Healthcare for Medicare Cost Control</h3>
+                <p class="case-line"><strong>Problem:</strong> Fraudulent billing patterns can silently increase Medicare spending and evade rule-based checks.</p>
+                <p class="case-line"><strong>Approach:</strong> Built fraud detection analytics to identify anomalous provider behavior and suspicious claim clusters.</p>
+                <p class="case-line"><strong>Impact:</strong> Improved visibility into high-risk claim behavior and strengthened support for proactive cost-mitigation decisions.</p>
+                <p><strong>Tech:</strong> Python, anomaly detection, healthcare analytics, statistical modeling</p>
+                <a class="project-doc-link" href="documents/FRAUD%20DETECTION%20IN%20HEALTHCARE%20FOR%20MITIGATING%20MEDICARE%20%20SPENDING.pdf" target="_blank" rel="noopener noreferrer">View report (PDF) ↗</a>
+                <div class="tags">
+                    <span>#HealthcareAI</span><span>#FraudDetection</span><span>#Medicare</span>
                 </div>
             </div>
         </div>
-       
+
+        <div class="cs-epilogue" aria-label="Key learnings from case studies">
+            <p class="cs-epilogue-label">What building these taught me</p>
+            <div class="cs-insights">
+                <span class="cs-insight">Defining the problem is the hardest part</span>
+                <span class="cs-insight">Data readiness matters as much as the model</span>
+                <span class="cs-insight">Every domain has its own ground truth</span>
+                <span class="cs-insight">Findings mean nothing until communicated clearly</span>
+                <span class="cs-insight">Vague ideas sharpen through research and iteration</span>
+            </div>
+        </div>
+
     </section>
 
-    <section id="contact" class="fade-in">
+    <section id="writing" class="fade-in writing-section">
+        <details class="writing-toggle">
+            <summary class="writing-summary">
+                <h2>Writing &amp; Thinking</h2>
+                <span class="writing-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 10 16" width="10" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </summary>
+            <div class="writing-body">
+                <p class="section-intro">Posts and reflections I've shared publicly, on learning, systems, and what the work actually teaches you.</p>
+                <div class="writing-feed-wrap">
+                    <div class="writing-feed">
+                        <article class="writing-card">
+                            <span class="writing-platform medium-badge">Medium</span>
+                            <h3 class="writing-title">Understanding Similarity Measures in Data Science</h3>
+                            <p class="writing-excerpt">An exploration of distance metrics (cosine similarity, Euclidean, Manhattan) and how they map to intuitions from everyday life. Written to make abstract math feel grounded and usable.</p>
+                            <a class="writing-link" href="https://medium.com/@lohithprasannateja/understanding-similarity-measures-metrics-in-data-science-d6b4a686676b" target="_blank" rel="noopener noreferrer">Read on Medium ↗</a>
+                        </article>
+                        <article class="writing-card">
+                            <span class="writing-platform linkedin-badge">LinkedIn</span>
+                            <h3 class="writing-title">Amazon Applied Scientist Interview: What I Actually Learned</h3>
+                            <p class="writing-excerpt">I wasn't selected, and that clarity was useful. Honest reflections on ML depth, where I got stuck (Autoencoders, loss functions), and why every interview is a diagnostic, not just a verdict.</p>
+                            <a class="writing-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7313684208571355138/?originTrackingId=NZurxChCJ055tzaJYb8BrQ%3D%3D" target="_blank" rel="noopener noreferrer">Read on LinkedIn ↗</a>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </details>
+    </section>
+
+    <section id="contact" class="fade-in contact-section">
+        <div class="contact-ambient" aria-hidden="true">
+            <span class="orb orb-one"></span>
+            <span class="orb orb-two"></span>
+            <span class="orb orb-three"></span>
+        </div>
         <h2>Contact</h2>
-        <div class="contact-info">
-            <p>Email: <a href="mailto:lohithprasannateja@gmail.com">lohithprasannateja@gmail.com</a></p>
-            <p>Phone: +17169077542</p>
-            <p><a href="https://www.linkedin.com/in/lohith-prasanna-teja-kakumanu-83a5a014b/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+        <p class="section-intro">Open to meaningful conversations around data science work, practical problem-solving, and career growth.</p>
+        <div class="contact-stage">
+            <div class="contact-panel">
+                <a class="contact-cta-card contact-cta-email" href="mailto:lohithprasannateja@gmail.com">
+                    <span class="cta-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="img" aria-label="Email icon">
+                            <path d="M3 6h18v12H3z"></path>
+                            <path d="m3 7 9 7 9-7"></path>
+                        </svg>
+                    </span>
+                    <span class="cta-kicker">Direct</span>
+                    <h3>Drop an email</h3>
+                    <p>Send your context and I will respond with the right next step.</p>
+                    <span class="cta-meta">lohithprasannateja@gmail.com</span>
+                </a>
+                <a class="contact-cta-card contact-cta-primary contact-cta-topmate" href="https://topmate.io/lohith_klpteja?utm_campaign=Page_Ready&utm_medium=popup&utm_source=topmate" target="_blank" rel="noopener noreferrer">
+                    <span class="cta-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="img" aria-label="Schedule icon">
+                            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                            <path d="M8 3v4M16 3v4M3 10h18"></path>
+                            <circle cx="9" cy="14" r="1.2"></circle>
+                            <circle cx="13" cy="14" r="1.2"></circle>
+                            <circle cx="17" cy="14" r="1.2"></circle>
+                        </svg>
+                    </span>
+                    <span class="cta-kicker">Topmate</span>
+                    <h3>Book an appointment</h3>
+                    <p>Best for collaboration, research discussions, portfolio reviews, and focused data science guidance.</p>
+                    <span class="cta-meta">Pick a time that fits your schedule</span>
+                </a>
+            </div>
+            <div class="contact-links-inline">
+                <a href="tel:+17169077542">Call: +1 716 907 7542</a>
+                <a class="linkedin-link" href="https://www.linkedin.com/in/lohith-prasanna-teja-kakumanu-83a5a014b/" target="_blank" rel="noopener noreferrer">
+                    <span class="link-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="img" aria-label="LinkedIn logo">
+                            <path d="M6.5 8.5h3v9h-3zM8 5.2a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4zM11.5 8.5h2.9v1.3h.1c.4-.8 1.4-1.5 2.9-1.5 3.1 0 3.6 2 3.6 4.7v4.5h-3V13c0-1.1 0-2.5-1.6-2.5s-1.8 1.2-1.8 2.4v4.6h-3z"></path>
+                        </svg>
+                    </span>
+                    LinkedIn
+                </a>
+                <a class="scholar-link" href="https://scholar.google.com/citations?user=FMuN3M4AAAAJ" target="_blank" rel="noopener noreferrer">
+                    <span class="link-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="img" aria-label="Google Scholar logo" fill="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </span>
+                    Scholar
+                </a>
+            </div>
         </div>
     </section>
     
@@ -330,14 +597,70 @@
 
     <!-- Modal for Achievements Links -->
     <div id="achievements-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content achievements-modal-content">
             <span class="close-btn" id="achievements-close-btn">&times;</span>
-            <h2>Achievements</h2>
-            <ul class="achievement-links">
-                <li><a href="#" id="certifications-link" aria-label="Microsoft Certifications">Microsoft Certifications &#x1F4DA;</a></li>
-                <li><a href="#" id="award-link" aria-label="Infosys Award">Infosys Award &#x1F3C6;</a></li>
-                <li><a href="#" id="licenses-link" aria-label="Infosys Licenses">Infosys Licenses &#x1F4DC;</a></li>
-            </ul>
+            <div class="achievements-header">
+                <h2>Along the Way</h2>
+                <p class="achievements-subtitle">Credentials, awards &amp; recognitions picked up along the way.</p>
+            </div>
+            <div class="achievement-cards">
+                <button class="achievement-card" id="certifications-link" aria-label="Microsoft Certifications">
+                    <span class="ach-icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 2L4 5.5v5c0 4.2 3 7.8 7 8.8 4-1 7-4.6 7-8.8v-5z"/>
+                            <path d="M8 11l2 2 4-4"/>
+                        </svg>
+                    </span>
+                    <div class="ach-info">
+                        <span class="ach-name">Microsoft Certifications</span>
+                        <span class="ach-desc">Azure AI &amp; Data Science credentials</span>
+                    </div>
+                    <svg class="ach-caret" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l6 6-6 6"/></svg>
+                </button>
+                <button class="achievement-card" id="award-link" aria-label="Infosys Award">
+                    <span class="ach-icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="14" r="5.5"/>
+                            <path d="M7.5 3h7l-1.5 4.5H9z"/>
+                            <path d="M9 7.5l2 6.5M13 7.5l-2 6.5"/>
+                        </svg>
+                    </span>
+                    <div class="ach-info">
+                        <span class="ach-name">Infosys Award</span>
+                        <span class="ach-desc">Excellence recognition at Infosys</span>
+                    </div>
+                    <svg class="ach-caret" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l6 6-6 6"/></svg>
+                </button>
+                <button class="achievement-card" id="licenses-link" aria-label="Infosys Licenses">
+                    <span class="ach-icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="5" width="18" height="12" rx="2"/>
+                            <circle cx="8" cy="11" r="2.5"/>
+                            <line x1="13" y1="9" x2="18" y2="9"/>
+                            <line x1="13" y1="13" x2="18" y2="13"/>
+                        </svg>
+                    </span>
+                    <div class="ach-info">
+                        <span class="ach-name">Infosys Licenses</span>
+                        <span class="ach-desc">Professional licenses earned during tenure</span>
+                    </div>
+                    <svg class="ach-caret" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l6 6-6 6"/></svg>
+                </button>
+                <button class="achievement-card" id="suny-certificate-link" aria-label="SUNY Startup Summer School Certificate">
+                    <span class="ach-icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 9l9-4.5 9 4.5-9 4.5z"/>
+                            <path d="M6.5 11.5v4.5a9 3 0 0 0 9 0v-4.5"/>
+                            <line x1="20" y1="9" x2="20" y2="14"/>
+                        </svg>
+                    </span>
+                    <div class="ach-info">
+                        <span class="ach-name">SUNY Startup Certificate</span>
+                        <span class="ach-desc">Summer BootCamp, State University of New York</span>
+                    </div>
+                    <svg class="ach-caret" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l6 6-6 6"/></svg>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -349,9 +672,37 @@
         </div>
     </div>
 
-    <!-- Info Box -->
-    <div id="info-box" class="info-box">
-        <p>This website is solely created by Lohith Prasanna Teja Kakumanu and chatgpt is used for optimizing. Published under University at Buffalo, The State University of New York (buffalo.edu).</p>
+    <!-- Info Modal -->
+    <div id="info-modal" class="modal info-modal">
+        <div class="modal-content info-modal-content">
+            <span class="close-btn" id="info-close-btn">&times;</span>
+            <div class="info-modal-header">
+                <svg class="info-modal-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="9"/>
+                    <line x1="11" y1="10" x2="11" y2="15.5"/>
+                    <circle cx="11" cy="7.5" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+                <h2>About This Site</h2>
+            </div>
+            <div class="info-modal-body">
+                <div class="info-row">
+                    <span class="info-label">Author</span>
+                    <span class="info-value">Lohith Prasanna Teja Kakumanu</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Stack</span>
+                    <span class="info-value">HTML · CSS · Vanilla JS · Anime.js</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">AI Assist</span>
+                    <span class="info-value">ChatGPT used for optimization &amp; content refinement</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Published</span>
+                    <span class="info-value">University at Buffalo, The State University of New York</span>
+                </div>
+            </div>
+        </div>
     </div>
     
 

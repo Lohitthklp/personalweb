@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+  <defs>
+    <!-- Radial fill matches circular boundary (userSpaceOnUse = predictable in all browsers) -->
+    <radialGradient id="bm-plate" cx="118" cy="108" r="132" fx="108" fy="98" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#454c5a"/>
+      <stop offset="0.5" stop-color="#2a3038"/>
+      <stop offset="100%" stop-color="#12151a"/>
+    </radialGradient>
+    <linearGradient id="bm-out" x1="158" y1="108" x2="188" y2="152" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer boundary: circle = graph “field” / lens (fits favicon + nav cleanly) -->
+  <circle cx="128" cy="128" r="118" fill="url(#bm-plate)"/>
+  <circle cx="128" cy="128" r="118" fill="none" stroke="#1e293b" stroke-opacity="0.9" stroke-width="1.5"/>
+  <circle cx="128" cy="128" r="106" fill="none" stroke="#64748b" stroke-opacity="0.45" stroke-width="1"/>
+
+  <!-- Cross-links (dim) -->
+  <g stroke="#94a3b8" stroke-linecap="round" stroke-opacity="0.35" stroke-width="1.65">
+    <line x1="78" y1="88" x2="128" y2="154"/>
+    <line x1="78" y1="168" x2="128" y2="102"/>
+  </g>
+
+  <!-- Main forward paths -->
+  <g stroke="#38bdf8" stroke-linecap="round" stroke-opacity="0.88" stroke-width="2.35">
+    <line x1="78" y1="88" x2="128" y2="102"/>
+    <line x1="78" y1="128" x2="128" y2="102"/>
+    <line x1="78" y1="128" x2="128" y2="154"/>
+    <line x1="78" y1="168" x2="128" y2="154"/>
+  </g>
+
+  <g stroke="#e0f2fe" stroke-linecap="round" stroke-opacity="0.92" stroke-width="2.6">
+    <line x1="128" y1="102" x2="174" y2="128"/>
+    <line x1="128" y1="154" x2="174" y2="128"/>
+  </g>
+
+  <!-- Nodes -->
+  <circle cx="78" cy="88" r="8.5" fill="#12151a" stroke="#7dd3fc" stroke-width="2.4"/>
+  <circle cx="78" cy="128" r="8.5" fill="#12151a" stroke="#7dd3fc" stroke-width="2.4"/>
+  <circle cx="78" cy="168" r="8.5" fill="#12151a" stroke="#7dd3fc" stroke-width="2.4"/>
+
+  <circle cx="128" cy="102" r="9.5" fill="#12151a" stroke="#bae6fd" stroke-width="2.35"/>
+  <circle cx="128" cy="154" r="9.5" fill="#12151a" stroke="#bae6fd" stroke-width="2.35"/>
+
+  <circle cx="174" cy="128" r="13.5" fill="url(#bm-out)" stroke="#f0f9ff" stroke-opacity="0.95" stroke-width="2"/>
+  <circle cx="174" cy="128" r="6.5" fill="#ffffff"/>
+
+  <!-- Trend -->
+  <polyline points="46,200 72,180 96,186 118,166 138,150" stroke="#38bdf8" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-opacity="0.95"/>
+  <circle cx="138" cy="150" r="4.25" fill="#38bdf8"/>
+</svg>
