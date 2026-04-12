@@ -1,0 +1,12 @@
+{
+  "name": "personalweb",
+  "version": "1.0.0",
+  "description": "Personal portfolio website",
+  "scripts": {
+    "dev": "serve .",
+    "start": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
