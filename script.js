@@ -24,6 +24,79 @@ document.addEventListener("DOMContentLoaded", function() {
     const orionEntry = document.querySelector('.orion-entry');
     const orionDynamicLogo = document.querySelector('.orion-dynamic-logo');
     const experienceEntries = document.querySelectorAll('.experience-entry');
+    const navHamburger = document.getElementById('nav-hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navOverlay = document.getElementById('nav-overlay');
+    const dropdownLi = document.querySelector('nav li.dropdown');
+
+    function isMobileNavLayout() {
+        return window.matchMedia('(max-width: 900px)').matches;
+    }
+
+    function closeMobileNav() {
+        if (!navHamburger || !navMenu || !navOverlay) {
+            return;
+        }
+        navHamburger.classList.remove('is-open');
+        navHamburger.setAttribute('aria-expanded', 'false');
+        navHamburger.setAttribute('aria-label', 'Open menu');
+        navMenu.classList.remove('is-open');
+        navOverlay.classList.remove('is-open');
+        navOverlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('nav-drawer-open');
+        if (dropdownLi) {
+            dropdownLi.classList.remove('mobile-open');
+        }
+        if (moreLink) {
+            moreLink.classList.remove('flipped');
+        }
+    }
+
+    function openMobileNav() {
+        if (!navHamburger || !navMenu || !navOverlay) {
+            return;
+        }
+        navHamburger.classList.add('is-open');
+        navHamburger.setAttribute('aria-expanded', 'true');
+        navHamburger.setAttribute('aria-label', 'Close menu');
+        navMenu.classList.add('is-open');
+        navOverlay.classList.add('is-open');
+        navOverlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('nav-drawer-open');
+    }
+
+    function toggleMobileNav() {
+        if (!navMenu || !navMenu.classList.contains('is-open')) {
+            openMobileNav();
+        } else {
+            closeMobileNav();
+        }
+    }
+
+    if (navHamburger && navMenu && navOverlay) {
+        navHamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMobileNav();
+        });
+        navOverlay.addEventListener('click', closeMobileNav);
+        window.addEventListener('resize', function() {
+            if (!isMobileNavLayout()) {
+                closeMobileNav();
+            }
+        });
+    }
+
+    if (moreLink && dropdownLi) {
+        moreLink.addEventListener('click', function(e) {
+            if (!isMobileNavLayout()) {
+                return;
+            }
+            e.preventDefault();
+            const open = !dropdownLi.classList.contains('mobile-open');
+            dropdownLi.classList.toggle('mobile-open', open);
+            moreLink.classList.toggle('flipped', open);
+        });
+    }
 
     // Smooth scrolling
     links.forEach(link => {
@@ -43,6 +116,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 top: target.offsetTop - 70,
                 behavior: 'smooth'
             });
+            if (isMobileNavLayout()) {
+                closeMobileNav();
+            }
         });
     });
 
@@ -198,12 +274,14 @@ document.addEventListener("DOMContentLoaded", function() {
         e.preventDefault();
         modal.style.display = 'block';
         lockScroll();
+        closeMobileNav();
     });
 
     achievementsLink.addEventListener('click', function(e) {
         e.preventDefault();
         achievementsModal.style.display = 'block';
         lockScroll();
+        closeMobileNav();
     });
 
     certificationsLink.addEventListener('click', function(e) {
@@ -239,6 +317,7 @@ document.addEventListener("DOMContentLoaded", function() {
         e.preventDefault();
         infoModal.style.display = 'block';
         lockScroll();
+        closeMobileNav();
     });
 
     closeBtns.forEach(btn => {
@@ -457,5 +536,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (e.key === 'Escape') closeGlimpse();
         if (e.key === 'ArrowLeft') stepGlimpse(-1);
         if (e.key === 'ArrowRight') stepGlimpse(1);
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key !== 'Escape' || !navMenu || !navMenu.classList.contains('is-open')) {
+            return;
+        }
+        closeMobileNav();
     });
 });

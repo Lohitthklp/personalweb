@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <meta name="description" content="Portfolio of Lohith Prasanna Teja Kakumanu, an applied AI engineer building production-ready LLM systems, data platforms, and machine learning solutions.">
         <meta name="keywords" content="Lohith Prasanna Teja Kakumanu, Applied AI Engineer, Data Scientist, LLM, AI Systems, MLOps, Portfolio">
         <title>lohithpr</title> <!-- Updated title -->
@@ -18,7 +18,7 @@
         <a href="#home" id="logo" aria-label="Home">
             <img src="icons/brand-mark.svg" alt="Brand mark: neural network layers and signal">
         </a>
-        <ul>
+        <ul id="nav-menu">
             <li><a href="#home" aria-label="Home">Home</a></li>
             <li><a href="#about" aria-label="About Me">About Me</a></li>
             <li><a href="#skills" aria-label="Skills">Skills</a></li>
@@ -52,7 +52,13 @@
                 </div>
             </li>
         </ul>
+        <button type="button" class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
     <section id="home" class="fade-in">
         <div class="intro">

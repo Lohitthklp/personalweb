@@ -1,13 +1,21 @@
 /* Base styles */
 html {
     scroll-behavior: smooth;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    overflow-x: hidden;
     background-color: #f9f9f9;
     color: #333;
 }
@@ -18,7 +26,9 @@ nav {
     padding: 10px 0;
     position: fixed;
     width: 100%;
+    max-width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -264,9 +274,18 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 14px 16px;
     width: 100%;
+    max-width: 100%;
     position: relative;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
 }
 
 /* Skills section styles */
@@ -1379,7 +1398,7 @@ body.dark-theme .writing-toggle[open] .writing-body .writing-card:nth-child(3) {
 .experience-entry {
     position: relative;
     display: grid;
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 72px minmax(0, 1fr);
     gap: 14px;
     margin-bottom: 20px;
     align-items: start;
@@ -1460,6 +1479,7 @@ body.dark-theme .writing-toggle[open] .writing-body .writing-card:nth-child(3) {
 }
 
 .experience-story {
+    min-width: 0;
     background: linear-gradient(160deg, #ffffff, #f5faff);
     border: 1px solid #d9e8fb;
     border-radius: 14px;
@@ -1491,6 +1511,8 @@ body.dark-theme .writing-toggle[open] .writing-body .writing-card:nth-child(3) {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 
 .company-site-link {
@@ -1802,7 +1824,7 @@ body.dark-theme .writing-toggle[open] .writing-body .writing-card:nth-child(3) {
     }
 
     .experience-entry {
-        grid-template-columns: 52px 1fr;
+        grid-template-columns: 52px minmax(0, 1fr);
         gap: 10px;
     }
 
@@ -2324,7 +2346,7 @@ body.dark-theme .personal-philosophy p {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1001;
+    z-index: 1200;
     left: 0;
     top: 0;
     width: 100%;
@@ -2346,9 +2368,10 @@ body.modal-open {
     margin: 5% auto;
     padding: 28px 26px 26px;
     width: 80%;
-    max-width: 800px;
+    max-width: min(800px, calc(100vw - 24px));
     border-radius: 10px;
     position: relative;
+    box-sizing: border-box;
     animation: fadeInModal 0.22s ease;
     border: 1px solid rgba(0, 191, 255, 0.35);
     box-shadow:
@@ -3157,8 +3180,29 @@ body.dark-theme .contact-links-inline a {
    BREAKPOINT ≤ 900px — Tablets & phones: nav becomes a drawer
    ============================================================ */
 @media (max-width: 900px) {
+    nav {
+        z-index: 1105;
+        padding-top: calc(10px + env(safe-area-inset-top, 0px));
+        padding-left: env(safe-area-inset-left, 0px);
+        padding-right: env(safe-area-inset-right, 0px);
+    }
+
+    nav a#logo {
+        position: relative;
+        z-index: 1102;
+        padding-left: max(16px, env(safe-area-inset-left, 0px));
+    }
+
     .nav-hamburger {
         display: flex;
+        position: relative;
+        z-index: 1102;
+        padding-right: max(12px, env(safe-area-inset-right, 0px));
+    }
+
+    body.nav-drawer-open {
+        overflow: hidden;
+        touch-action: none;
     }
 
     nav ul {
@@ -3173,7 +3217,7 @@ body.dark-theme .contact-links-inline a {
         align-items: stretch;
         gap: 0;
         z-index: 1099;
-        padding: 70px 0 24px;
+        padding: max(70px, calc(52px + env(safe-area-inset-top, 0px))) 0 max(28px, env(safe-area-inset-bottom, 0px));
         overflow-y: auto;
         box-shadow: -6px 0 28px rgba(0, 0, 0, 0.45);
         transform: translateX(110%);
@@ -3316,8 +3360,14 @@ body.dark-theme .contact-links-inline a {
         font-size: 1.28em;
     }
 
+    .about-content {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
     .about-description {
         padding: 18px 16px 16px;
+        max-width: 100%;
     }
 
     .personal-philosophy {
@@ -3371,7 +3421,7 @@ body.dark-theme .contact-links-inline a {
     }
 
     .experience-entry {
-        grid-template-columns: 42px 1fr;
+        grid-template-columns: 42px minmax(0, 1fr);
         gap: 8px;
     }
 
@@ -3497,6 +3547,15 @@ body.dark-theme .contact-links-inline a {
     .contact-links-inline {
         flex-direction: column;
         gap: 10px;
+        align-items: stretch;
+    }
+
+    .contact-links-inline a {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 12px 14px;
     }
 
     /* Pause contact orb animations on mobile for better performance */
@@ -3508,9 +3567,21 @@ body.dark-theme .contact-links-inline a {
 
     /* ---- Modals ---- */
     .modal-content {
-        width: 92%;
-        margin: 10% auto;
-        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+        margin: max(12px, env(safe-area-inset-top, 0px)) auto max(16px, env(safe-area-inset-bottom, 0px));
+        padding: 14px 14px 16px;
+    }
+
+    .close-btn {
+        float: none;
+        align-self: flex-end;
+        order: -1;
+        margin: 0 0 6px;
+        line-height: 1;
+        padding: 4px 6px;
     }
 
     .achievements-modal-content {
@@ -3519,7 +3590,20 @@ body.dark-theme .contact-links-inline a {
 
     .resume-iframe,
     .achievement-iframe {
-        height: 66vh;
+        height: min(72vh, calc(100dvh - 120px));
+        flex: 1 1 auto;
+        min-height: 240px;
+    }
+
+    .info-modal-body .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 12px 0;
+    }
+
+    .info-label {
+        min-width: 0;
     }
 
     /* ---- Footer ---- */
@@ -3530,10 +3614,16 @@ body.dark-theme .contact-links-inline a {
 
     /* ---- Dark mode toggle (slightly smaller on phone) ---- */
     .switch {
-        bottom: 14px;
-        right: 14px;
+        bottom: max(14px, env(safe-area-inset-bottom, 0px));
+        right: max(14px, env(safe-area-inset-right, 0px));
         width: 44px;
         height: 23px;
+    }
+
+    .cs-epilogue {
+        overflow-x: hidden;
+        padding-left: 2px;
+        padding-right: 2px;
     }
 
     .switch .slider:before {
@@ -3638,7 +3728,7 @@ body.dark-theme .contact-links-inline a {
     }
 
     .experience-entry {
-        grid-template-columns: 36px 1fr;
+        grid-template-columns: 36px minmax(0, 1fr);
         gap: 6px;
     }
 
