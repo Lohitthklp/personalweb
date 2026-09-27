@@ -11,7 +11,7 @@ permissions:
 
 jobs:
     validate:
-        name: Lint and format check
+        name: Validate
         runs-on: ubuntu-latest
         steps:
             - name: Check out repository
@@ -19,8 +19,6 @@ jobs:
 
             - name: Enable pnpm
               uses: pnpm/action-setup@v4
-              with:
-                  version: 9
 
             - name: Set up Node.js
               uses: actions/setup-node@v4
