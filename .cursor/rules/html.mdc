@@ -1,0 +1,25 @@
+---
+description: HTML semantics and safety for the portfolio pages
+globs: "**/*.html"
+alwaysApply: false
+---
+
+# HTML
+
+- Use semantic elements. Use `button` for actions and `a` for navigation.
+- Do not make `span` or `div` elements clickable.
+- Interactive controls must be usable from the keyboard.
+- Add ARIA only when native semantics are not enough.
+- Every image needs an appropriate `alt`. Use empty `alt` only when the image is decorative and another control already names it.
+- External links opened in a new tab use `rel="noopener noreferrer"`.
+- Do not add inline styles or inline event handlers.
+- Keep a valid heading hierarchy and do not create duplicate IDs.
+- Do not insert unsanitized external HTML.
+
+```html
+<!-- Bad -->
+<span onclick="openResume()">Resume</span>
+
+<!-- Good -->
+<a href="documents/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+```

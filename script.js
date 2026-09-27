@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const logo = document.getElementById('logo');
     const moreLink = document.getElementById('more-link');
     const achievementIframe = document.querySelector('.achievement-iframe');
-    const achievementsCloseBtn = document.getElementById('achievements-close-btn');
     const achievementDisplayCloseBtn = document.getElementById('achievement-display-close-btn');
     const orionClientFlip = document.querySelector('.orion-client-flip');
     const orionEntry = document.querySelector('.orion-entry');
@@ -195,6 +194,24 @@ document.addEventListener("DOMContentLoaded", function() {
     experienceEntries.forEach(item => {
         experienceObserver.observe(item);
     });
+
+    const scrollReveals = document.querySelectorAll('#skills .scroll-reveal, #approach .scroll-reveal, #experience .scroll-reveal, #projects .scroll-reveal, #writing .scroll-reveal, #contact .scroll-reveal');
+    if (!prefersReducedMotion && scrollReveals.length) {
+        document.body.classList.add('js-scroll-headings');
+        const revealObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-inview');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+        requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+                scrollReveals.forEach(item => revealObserver.observe(item));
+            });
+        });
+    }
 
     // Theme switcher
     const themeToggle = document.getElementById('theme-toggle');
@@ -465,11 +482,40 @@ document.addEventListener("DOMContentLoaded", function() {
     const glimpseBodyEl = document.getElementById('glimpse-body');
 
     if (glimpseToggle && glimpseBodyEl) {
+        const glimpseSection = glimpseToggle.closest('.glimpse-section');
+        let glimpseHoverTimer = null;
+
+        function setGlimpseOpen(open) {
+            glimpseToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            glimpseBodyEl.classList.toggle('collapsed', !open);
+        }
+
         glimpseToggle.addEventListener('click', function() {
+            clearTimeout(glimpseHoverTimer);
             const expanded = glimpseToggle.getAttribute('aria-expanded') === 'true';
-            glimpseToggle.setAttribute('aria-expanded', String(!expanded));
-            glimpseBodyEl.classList.toggle('collapsed', expanded);
+            setGlimpseOpen(!expanded);
         });
+
+        const canHoverOpen = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        if (glimpseSection && canHoverOpen) {
+            glimpseSection.addEventListener('mouseenter', function() {
+                clearTimeout(glimpseHoverTimer);
+                if (glimpseToggle.getAttribute('aria-expanded') === 'true') {
+                    return;
+                }
+                glimpseHoverTimer = setTimeout(function() {
+                    setGlimpseOpen(true);
+                }, 1000);
+            });
+            glimpseSection.addEventListener('mouseleave', function() {
+                clearTimeout(glimpseHoverTimer);
+                glimpseHoverTimer = null;
+                const lightboxOpen = glimpseLightbox && glimpseLightbox.classList.contains('open');
+                if (!lightboxOpen) {
+                    setGlimpseOpen(false);
+                }
+            });
+        }
     }
 
     const glimpsePhotos = Array.from(document.querySelectorAll('.glimpse-photo'));
@@ -484,8 +530,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let glimpseActiveIdx = 0;
 
     function syncGlimpseLbNav() {
-        var atStart = glimpseActiveIdx === 0;
-        var atEnd = glimpseActiveIdx === glimpsePhotos.length - 1;
+        const atStart = glimpseActiveIdx === 0;
+        const atEnd = glimpseActiveIdx === glimpsePhotos.length - 1;
         if (glimpseLbPrev) glimpseLbPrev.disabled = atStart;
         if (glimpseLbNext) glimpseLbNext.disabled = atEnd;
         if (glimpseLbPrevMob) glimpseLbPrevMob.disabled = atStart;
@@ -494,7 +540,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function openGlimpse(idx) {
         glimpseActiveIdx = idx;
-        var btn = glimpsePhotos[idx];
+        const btn = glimpsePhotos[idx];
         glimpseLbImg.src = btn.dataset.src;
         glimpseLbImg.alt = btn.querySelector('img').alt;
         glimpseLbCaption.textContent = btn.dataset.caption || '';
@@ -511,7 +557,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function stepGlimpse(dir) {
-        var next = glimpseActiveIdx + dir;
+        const next = glimpseActiveIdx + dir;
         if (next >= 0 && next < glimpsePhotos.length) openGlimpse(next);
     }
 
@@ -544,4 +590,406 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         closeMobileNav();
     });
+
+    const mediumFeedEl = document.getElementById('medium-feed');
+    const mediumProfileUrl = (mediumFeedEl && mediumFeedEl.getAttribute('data-medium-profile')) || '';
+    const mediumApiUrl = (mediumFeedEl && mediumFeedEl.getAttribute('data-medium-api')) || '/api/medium';
+    const MEDIUM_FETCH_TIMEOUT_MS = 8000;
+    let mediumFeedRequest = null;
+
+    function sanitizeOrNormalizeUrl(value) {
+        try {
+            const url = new URL(String(value || '').trim());
+            if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+                return '';
+            }
+            return url.toString();
+        } catch {
+            return '';
+        }
+    }
+
+    function truncateExcerpt(text, maxLength) {
+        const normalized = String(text || '').replace(/\s+/g, ' ').trim();
+        if (normalized.length <= maxLength) {
+            return normalized;
+        }
+        const slice = normalized.slice(0, maxLength);
+        const lastSpace = slice.lastIndexOf(' ');
+        const clipped = lastSpace > 80 ? slice.slice(0, lastSpace) : slice;
+        return clipped.replace(/[.,;:!?-]+$/, '') + '…';
+    }
+
+    function formatMediumDate(value) {
+        const parsed = Date.parse(value);
+        if (Number.isNaN(parsed)) {
+            return '';
+        }
+        return new Intl.DateTimeFormat('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+        }).format(parsed);
+    }
+
+    function mediumProfileHref(profileUrl) {
+        return sanitizeOrNormalizeUrl(profileUrl) || mediumProfileUrl;
+    }
+
+    function createMediumProfileLink(profileUrl, label) {
+        const href = mediumProfileHref(profileUrl);
+        if (!href) {
+            const text = document.createElement('span');
+            text.textContent = label;
+            return text;
+        }
+        const link = document.createElement('a');
+        link.href = href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = label;
+        return link;
+    }
+
+    function ensureMediumStatus() {
+        let status = mediumFeedEl.querySelector('.writing-feed-status');
+        if (!status) {
+            status = document.createElement('p');
+            status.className = 'writing-feed-status';
+            mediumFeedEl.prepend(status);
+        }
+        status.setAttribute('role', 'status');
+        status.setAttribute('aria-live', 'polite');
+        return status;
+    }
+
+    function showMediumLoadingState() {
+        if (!mediumFeedEl) {
+            return;
+        }
+        const status = ensureMediumStatus();
+        status.dataset.state = 'loading';
+        status.textContent = 'Loading Medium articles…';
+        mediumFeedEl.setAttribute('aria-busy', 'true');
+    }
+
+    function showMediumRefreshWarning(profileUrl) {
+        if (!mediumFeedEl) {
+            return;
+        }
+        const fallback = mediumFeedEl.querySelector('.writing-medium-fallback');
+        if (fallback) {
+            fallback.hidden = false;
+        }
+        mediumFeedEl.removeAttribute('aria-busy');
+        const status = ensureMediumStatus();
+        status.dataset.state = 'error';
+        status.textContent = '';
+        status.append('Medium articles could not be refreshed right now. A saved article is shown. ');
+        status.appendChild(createMediumProfileLink(profileUrl, 'Visit my Medium profile ↗'));
+    }
+
+    function showMediumEmptyState(profileUrl) {
+        if (!mediumFeedEl) {
+            return;
+        }
+        mediumFeedEl.removeAttribute('aria-busy');
+        mediumFeedEl.querySelectorAll('.writing-card, .writing-medium-fallback').forEach(function(node) {
+            node.remove();
+        });
+        const status = ensureMediumStatus();
+        status.dataset.state = 'empty';
+        status.textContent = '';
+        status.append('No public Medium articles were found. ');
+        status.appendChild(createMediumProfileLink(profileUrl, 'Visit my Medium profile ↗'));
+    }
+
+    function createNewBadge() {
+        const wrap = document.createElement('span');
+        wrap.className = 'writing-new-badge-wrap';
+        const badge = document.createElement('span');
+        badge.className = 'writing-new-badge';
+        badge.textContent = '';
+        badge.append('NEW');
+        const note = document.createElement('span');
+        note.className = 'writing-new-badge-note';
+        note.textContent = ', latest article';
+        badge.appendChild(note);
+        wrap.appendChild(badge);
+        return wrap;
+    }
+
+    function createMediumArticleCard(post, isLatest) {
+        const article = document.createElement('article');
+        article.className = 'writing-card';
+        if (isLatest) {
+            article.classList.add('writing-card-latest');
+        }
+
+        const top = document.createElement('div');
+        top.className = 'writing-card-top';
+
+        const heading = document.createElement('div');
+        heading.className = 'writing-card-heading';
+
+        const meta = document.createElement('div');
+        meta.className = 'writing-meta';
+
+        const platform = document.createElement('span');
+        platform.className = 'writing-platform medium-badge';
+        platform.textContent = 'Medium';
+        meta.appendChild(platform);
+
+        const formattedDate = formatMediumDate(post.publishedAt);
+        if (formattedDate) {
+            const time = document.createElement('time');
+            time.className = 'writing-date';
+            const parsed = Date.parse(post.publishedAt);
+            time.dateTime = new Date(parsed).toISOString();
+            time.textContent = formattedDate;
+            meta.appendChild(time);
+        }
+        heading.appendChild(meta);
+
+        const title = document.createElement('h3');
+        title.className = 'writing-title';
+        title.textContent = post.title || 'Untitled article';
+        heading.appendChild(title);
+
+        top.appendChild(heading);
+        if (isLatest) {
+            top.appendChild(createNewBadge());
+        }
+        article.appendChild(top);
+
+        const imageUrl = sanitizeOrNormalizeUrl(post.image);
+        if (imageUrl) {
+            const figure = document.createElement('figure');
+            figure.className = 'writing-cover';
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            img.alt = post.title ? 'Cover image for ' + post.title : '';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.width = 640;
+            img.height = 360;
+            img.addEventListener('error', function() {
+                figure.remove();
+            });
+            figure.appendChild(img);
+            article.appendChild(figure);
+        }
+
+        const tags = Array.isArray(post.tags) ? post.tags.filter(Boolean).slice(0, 3) : [];
+        if (tags.length) {
+            const list = document.createElement('ul');
+            list.className = 'writing-tags';
+            tags.forEach(function(tag) {
+                const item = document.createElement('li');
+                item.className = 'writing-tag';
+                item.textContent = tag;
+                list.appendChild(item);
+            });
+            article.appendChild(list);
+        }
+
+        const excerpt = truncateExcerpt(post.excerpt, 220);
+        if (excerpt) {
+            const excerptEl = document.createElement('p');
+            excerptEl.className = 'writing-excerpt';
+            excerptEl.textContent = excerpt;
+            article.appendChild(excerptEl);
+        }
+
+        const href = sanitizeOrNormalizeUrl(post.url);
+        if (!href) {
+            return null;
+        }
+        const link = document.createElement('a');
+        link.className = 'writing-link';
+        link.href = href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'Read on Medium ↗';
+        article.appendChild(link);
+        return article;
+    }
+
+    function renderMediumPosts(posts, profileUrl) {
+        if (!mediumFeedEl) {
+            return false;
+        }
+        const normalized = [];
+        const seen = Object.create(null);
+        (Array.isArray(posts) ? posts : []).forEach(function(post) {
+            if (!post) {
+                return;
+            }
+            const url = sanitizeOrNormalizeUrl(post.link || post.url);
+            const title = String(post.title || '').trim();
+            if (!url || !title) {
+                return;
+            }
+            const key = String(post.id || post.guid || url).toLowerCase();
+            if (seen[key] || seen[url.toLowerCase()]) {
+                return;
+            }
+            seen[key] = true;
+            seen[url.toLowerCase()] = true;
+            const categories = Array.isArray(post.categories) ? post.categories : post.tags;
+            normalized.push({
+                id: post.id || post.guid || url,
+                title: title,
+                url: url,
+                publishedAt: post.publicationDate || post.publishedAt || '',
+                author: post.author || '',
+                tags: Array.isArray(categories) ? categories : [],
+                excerpt: String(post.excerpt || ''),
+                image: post.thumbnail || post.image || ''
+            });
+        });
+
+        normalized.sort(function(a, b) {
+            const aTime = Date.parse(a.publishedAt || '');
+            const bTime = Date.parse(b.publishedAt || '');
+            return (Number.isNaN(bTime) ? 0 : bTime) - (Number.isNaN(aTime) ? 0 : aTime);
+        });
+
+        const fragment = document.createDocumentFragment();
+        normalized.forEach(function(post, index) {
+            const card = createMediumArticleCard(post, index === 0);
+            if (card) {
+                fragment.appendChild(card);
+            }
+        });
+        if (!fragment.childNodes.length) {
+            showMediumEmptyState(profileUrl);
+            return false;
+        }
+        mediumFeedEl.removeAttribute('aria-busy');
+        mediumFeedEl.replaceChildren(fragment);
+        return true;
+    }
+
+    function loadMediumPosts() {
+        if (!mediumFeedEl || mediumFeedRequest) {
+            return mediumFeedRequest;
+        }
+
+        showMediumLoadingState();
+        const controller = new AbortController();
+        const timer = setTimeout(function() {
+            controller.abort();
+        }, MEDIUM_FETCH_TIMEOUT_MS);
+
+        mediumFeedRequest = fetch(mediumApiUrl, {
+            signal: controller.signal,
+            headers: { Accept: 'application/json' }
+        }).then(function(response) {
+            if (!response.ok) {
+                throw new Error('Medium feed request failed with status ' + response.status);
+            }
+            return response.json();
+        }).then(function(payload) {
+            const posts = payload && (payload.articles || payload.posts);
+            if (!Array.isArray(posts)) {
+                throw new Error('Medium response is missing an articles array');
+            }
+            const profileUrl = mediumProfileHref(payload.profileUrl);
+            renderMediumPosts(posts, profileUrl);
+        }).catch(function(err) {
+            console.error('Medium articles could not be refreshed.', err && err.message ? err.message : err);
+            showMediumRefreshWarning(mediumProfileUrl);
+        }).finally(function() {
+            clearTimeout(timer);
+        });
+
+        return mediumFeedRequest;
+    }
+
+    function initializeMediumFeed() {
+        if (!mediumFeedEl) {
+            return;
+        }
+
+        const writingSection = document.getElementById('writing');
+        const startLoad = function() {
+            loadMediumPosts();
+        };
+
+        document.querySelectorAll('a[href="#writing"]').forEach(function(link) {
+            link.addEventListener('click', startLoad);
+        });
+
+        const writingToggle = document.querySelector('#writing .writing-toggle');
+        if (writingToggle) {
+            writingToggle.addEventListener('toggle', function() {
+                if (writingToggle.open) {
+                    startLoad();
+                }
+            });
+        }
+
+        if (!('IntersectionObserver' in window) || !writingSection) {
+            startLoad();
+            return;
+        }
+
+        const observer = new IntersectionObserver(function(entries, obs) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    startLoad();
+                    obs.disconnect();
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '240px 0px',
+            threshold: 0.01
+        });
+        observer.observe(writingSection);
+    }
+
+    function recordPortfolioVisit() {
+        const host = window.location.hostname;
+        if (
+            window.location.protocol === 'file:' ||
+            host === 'localhost' ||
+            host === '127.0.0.1' ||
+            host === '[::1]' ||
+            host === ''
+        ) {
+            return;
+        }
+
+        let external = false;
+        if (document.referrer) {
+            try {
+                external = new URL(document.referrer).hostname !== host;
+            } catch {
+                external = false;
+            }
+        }
+
+        fetch('/api/visit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ external: external }),
+            keepalive: true,
+            credentials: 'same-origin'
+        }).catch(function(err) {
+            console.error('Visit could not be recorded.', err && err.message ? err.message : err);
+        });
+    }
+
+    function schedulePortfolioVisit() {
+        if (document.prerendering) {
+            document.addEventListener('prerenderingchange', recordPortfolioVisit, { once: true });
+            return;
+        }
+        recordPortfolioVisit();
+    }
+
+    initializeMediumFeed();
+    schedulePortfolioVisit();
 });

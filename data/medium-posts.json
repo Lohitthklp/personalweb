@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-09-27T03:54:12Z",
+  "source": "https://medium.com/feed/@lohithprasannateja",
+  "profileUrl": "https://medium.com/@lohithprasannateja",
+  "posts": [
+    {
+      "id": "https://medium.com/p/032a19f6d662",
+      "title": "Why Is the Model Not Always the First Suspect? (FAQ Sets)",
+      "url": "https://medium.com/@lohithprasannateja/why-is-the-model-not-always-the-first-suspect-faq-sets-032a19f6d662",
+      "author": "Lohith Prasanna Teja Kakumanu",
+      "publishedAt": "2026-09-25T23:12:49Z",
+      "excerpt": "The questions that stay after the answer looks wrong, before you start swapping models. Some of these came up while writing the first article. Others did not need to interrupt the main story, but still matter once an AI…",
+      "image": "https://cdn-images-1.medium.com/max/1024/0*Mq_WP-bgTziVoxQu",
+      "tags": [
+        "programming",
+        "software-engineering",
+        "data-science",
+        "technology",
+        "ai"
+      ]
+    },
+    {
+      "id": "https://medium.com/p/fd0cd86aaf43",
+      "title": "What Actually Changes When an AI Feature Becomes a Production System",
+      "url": "https://medium.com/data-science-collective/what-actually-changes-when-an-ai-feature-becomes-a-production-system-fd0cd86aaf43",
+      "author": "Lohith Prasanna Teja Kakumanu",
+      "publishedAt": "2026-09-19T04:27:24Z",
+      "excerpt": "An Enterprise Data Scientist’s Guide for Enterprise Application Systems Hi Reader, It’s been a while to get back on track, I wanted to start this series with something that changed gradually in the way I think about AI…",
+      "image": "https://cdn-images-1.medium.com/max/1024/1*JLtfFVdFPh-RpqNt4vPcCg.png",
+      "tags": [
+        "rags",
+        "data-science",
+        "ai",
+        "ai-production",
+        "towards-data-science"
+      ]
+    },
+    {
+      "id": "https://medium.com/p/d6b4a686676b",
+      "title": "Understanding Similarity Measures in Data Science and Analytics",
+      "url": "https://medium.com/@lohithprasannateja/understanding-similarity-measures-metrics-in-data-science-d6b4a686676b",
+      "author": "Lohith Prasanna Teja Kakumanu",
+      "publishedAt": "2024-07-25T00:55:20Z",
+      "excerpt": "The following article explains various methods for computing distances and shows their intuitions in our daily lives. I’m writing this blog to give you a quick glimpse of the Similarity Metrics that we use in industry…",
+      "image": "https://cdn-images-1.medium.com/max/247/1*RQcTFa7h9CZltwy4zPeyeg.png",
+      "tags": [
+        "euclidean-distance",
+        "cosine-similarity",
+        "data-analysis",
+        "data-science",
+        "similarity-metrics"
+      ]
+    }
+  ]
+}

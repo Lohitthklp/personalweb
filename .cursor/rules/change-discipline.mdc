@@ -1,0 +1,23 @@
+---
+description: How to change this repository without disturbing unrelated work
+alwaysApply: true
+---
+
+# Change discipline
+
+- Read the relevant implementation before editing it.
+- Report the files that will change, and keep the edit scoped to the request.
+- Do not reformat unrelated sections or files.
+- Do not delete existing content or assets without explicit authorization.
+- Preserve user-authored uncommitted changes.
+- Verify existing behavior after a change.
+- Explain any new dependency, configuration file, or architectural decision.
+
+# Legacy code
+
+- New and modified code must meet the project standards.
+- Fix a directly adjacent violation only when that fix is safe and necessary.
+- Do not rewrite unrelated legacy code to satisfy a new linter.
+- Use a targeted lint override only when it is justified, and record the reason in `LEGACY.md`.
+- Do not disable an important rule globally to hide existing problems.
+- Do not create a formatting-only diff across the repository.

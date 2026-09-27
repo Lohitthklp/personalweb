@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; style-src 'self'; script-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'"
+        >
+        <title>Visit counts</title>
+        <link rel="stylesheet" href="/admin/admin.css">
+        <link rel="icon" type="image/svg+xml" href="/icons/brand-mark.svg">
+    </head>
+    <body>
+        <main class="admin-shell">
+            <h1>Visit counts</h1>
+            <p id="admin-status" class="admin-status" role="status" aria-live="polite">
+                Checking sign-in.
+            </p>
+            <form id="admin-login" class="admin-login" hidden>
+                <label for="admin-pin">PIN</label>
+                <input
+                    id="admin-pin"
+                    name="pin"
+                    type="password"
+                    autocomplete="current-password"
+                    minlength="8"
+                    maxlength="128"
+                    required
+                    spellcheck="false"
+                >
+                <button type="submit" id="admin-submit">Sign in</button>
+            </form>
+            <section id="admin-dashboard" class="admin-dashboard" hidden>
+                <h2 id="admin-dashboard-title" tabindex="-1">Recorded visits</h2>
+                <p>
+                    A visit is one browser on one US Eastern calendar day. Reloading the page does
+                    not add another visit. The same browser counts again on a later day. Bots,
+                    prefetched pages, this admin page, and local development are not included.
+                </p>
+                <p>
+                    LinkedIn is a visit from a link with <code>utm_source=linkedin</code>, and also
+                    a visit to the plain portfolio address when the browser reports that the person
+                    came from LinkedIn. Résumé uses <code>utm_source=resume</code>. Direct means no
+                    campaign parameter and no outside referrer. Other is everything else, so those
+                    visits stay in the total.
+                </p>
+                <p>
+                    A visit is stored only when the request includes this site's own page address,
+                    so the source can be checked. The server keeps a one-way daily hash only long
+                    enough to ignore a repeat visit that day, then deletes it. It does not store
+                    the IP address, user agent, referrer, or page URL. A failed save is omitted.
+                    Percentages appear after 20 visits in that period. Anyone who loads the public
+                    site can add a visit, so this is a record of daily browsers, not a verified
+                    headcount.
+                </p>
+                <p id="admin-recording" hidden></p>
+                <p id="admin-empty" hidden>No visits recorded yet.</p>
+                <div id="admin-figures" hidden>
+                    <h3>All time</h3>
+                    <ul id="admin-all-time"></ul>
+                    <h3>Last 7 days</h3>
+                    <ul id="admin-last-7"></ul>
+                    <h3>Last 30 days</h3>
+                    <ul id="admin-last-30"></ul>
+                    <h3>Recent days</h3>
+                    <ul id="admin-recent"></ul>
+                </div>
+                <h2>Links that set the source</h2>
+                <ul class="admin-links">
+                    <li>LinkedIn: <code id="admin-link-linkedin"></code></li>
+                    <li>Résumé: <code id="admin-link-resume"></code></li>
+                    <li>Direct: <code id="admin-link-direct"></code></li>
+                </ul>
+                <p id="admin-link-note"></p>
+                <button type="button" id="admin-logout">Log out</button>
+            </section>
+        </main>
+        <script src="/admin/admin.js" defer></script>
+    </body>
+</html>

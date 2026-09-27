@@ -1,0 +1,70 @@
+name: Update Medium posts
+
+# GitHub cron uses UTC. This job runs at 00:00, 06:00, 12:00, and 18:00 UTC.
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-medium-posts
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Refresh Medium JSON
+    runs-on: ubuntu-latest
+    if: github.ref_name == github.event.repository.default_branch
+    steps:
+      - name: Check out default branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install updater dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r scripts/requirements-medium.txt
+
+      - name: Run offline updater tests
+        run: python -m unittest discover -s scripts -p "test_*.py"
+
+      - name: Refresh Medium posts from RSS
+        run: python scripts/update_medium_posts.py
+
+      - name: Validate generated JSON
+        run: python scripts/update_medium_posts.py --validate-only
+
+      - name: Commit JSON only when it changed
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/medium-posts.json
+
+          echo "## Medium posts refresh" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Schedule: every six hours at minute 0 (UTC)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Source: \`https://medium.com/feed/@lohithprasannateja\`" >> "$GITHUB_STEP_SUMMARY"
+
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+          payload = json.loads(Path("data/medium-posts.json").read_text(encoding="utf-8"))
+          print(f"- Posts: {len(payload.get('posts', []))}")
+          print(f"- generatedAt: {payload.get('generatedAt')}")
+          PY
+
+          if git diff --cached --quiet; then
+            echo "- Result: JSON semantic content unchanged; no commit" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          git commit -m "chore: refresh Medium posts"
+          git push
+          echo "- Result: committed and pushed data/medium-posts.json" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Vercel should redeploy from this commit" >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,14 @@
+---
+description: Keep this portfolio a small vanilla site with isolated Vercel functions
+alwaysApply: true
+---
+
+# Architecture
+
+- Keep the vanilla HTML, CSS, and JavaScript architecture unless a migration is explicitly requested.
+- Do not add a frontend framework for a small feature.
+- Do not add a backend, database, CMS, or authentication without explicit approval.
+- Keep `index.html`, `styles.css`, and `script.js` as the main application files.
+- Put server-side behavior in small, isolated functions under `/api`.
+- The Medium account used by the site is `MEDIUM_USERNAME` in `api/medium.js`.
+- Do not make unrelated changes while implementing a scoped request.

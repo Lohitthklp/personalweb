@@ -1,12 +1,27 @@
 {
-  "name": "personalweb",
-  "version": "1.0.0",
-  "description": "Personal portfolio website",
-  "scripts": {
-    "dev": "serve .",
-    "start": "serve ."
-  },
-  "devDependencies": {
-    "serve": "^14.2.4"
-  }
+    "name": "personalweb",
+    "version": "1.0.0",
+    "description": "Personal portfolio website",
+    "packageManager": "pnpm@9.15.9",
+    "scripts": {
+        "dev": "serve .",
+        "start": "serve .",
+        "lint": "npm run lint:js && npm run lint:html && npm run lint:css && npm run lint:syntax",
+        "lint:js": "eslint .",
+        "lint:html": "html-validate index.html admin/index.html",
+        "lint:css": "stylelint styles.css admin/admin.css",
+        "lint:syntax": "node --check script.js && node --check api/medium.js && node --check api/visit.js && node --check api/admin.js && node --check api/analytics.js && node --check lib/http.js && node --check lib/visit-rules.js && node --check lib/admin-session.js && node --check lib/redis.js && node --check lib/visit-rules.test.js && node --check lib/admin-session.test.js && node --check lib/http.test.js && node --check lib/redis.test.js",
+        "format:check": "prettier --check .",
+        "test": "node --test lib/visit-rules.test.js lib/admin-session.test.js lib/http.test.js lib/redis.test.js",
+        "validate": "npm run lint && npm run format:check && npm run test"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "eslint": "^10.11.0",
+        "globals": "^17.12.0",
+        "html-validate": "^11.16.0",
+        "prettier": "^3.9.9",
+        "serve": "^14.2.4",
+        "stylelint": "^17.15.0"
+    }
 }

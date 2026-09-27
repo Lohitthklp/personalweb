@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Sample Medium Feed</title>
+    <link>https://medium.com/@lohithprasannateja</link>
+    <item>
+      <title>Older duplicate title</title>
+      <link>https://medium.com/@lohithprasannateja/older-post-aaaa1111</link>
+      <guid isPermaLink="false">https://medium.com/p/aaaa1111</guid>
+      <dc:creator>Lohith</dc:creator>
+      <pubDate>Mon, 01 Jan 2024 12:00:00 GMT</pubDate>
+      <category>old</category>
+      <content:encoded><![CDATA[<p>Older excerpt.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Why Is the Model Not Always the First Suspect?</title>
+      <link>https://evil.example/not-used</link>
+      <guid isPermaLink="true">https://medium.com/@lohithprasannateja/why-is-the-model-not-always-the-first-suspect-cccc3333</guid>
+      <dc:creator>Lohith Prasanna Teja Kakumanu</dc:creator>
+      <pubDate>Wed, 20 Aug 2025 15:00:00 GMT</pubDate>
+      <category>AI</category>
+      <category>FAQ</category>
+      <category>AI</category>
+      <content:encoded><![CDATA[
+        <script>alert(1)</script>
+        <style>.x{color:red}</style>
+        <iframe src="https://example.com"></iframe>
+        <img src="https://medium.com/_/stat?event=post.clientViewed&amp;source=pixel" width="1" height="1" />
+        <img src="https://cdn-images-1.medium.com/max/1200/cover-faq.png" alt="cover" />
+        <p>Useful excerpt about FAQ sets.</p>
+      ]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[What Actually Changes When an AI Feature Becomes a Production System]]></title>
+      <link>https://medium.com/@lohithprasannateja/what-actually-changes-bbbb2222</link>
+      <guid isPermaLink="false">https://medium.com/p/bbbb2222</guid>
+      <dc:creator>Lohith</dc:creator>
+      <pubDate>Tue, 10 Jun 2025 09:30:00 GMT</pubDate>
+      <category>Production</category>
+      <description><![CDATA[<p>Production systems change evaluation, monitoring, and ownership.</p>]]></description>
+      <media:content url="https://cdn-images-1.medium.com/max/800/prod-cover.png" medium="image" />
+    </item>
+    <item>
+      <title>Unsafe protocol post</title>
+      <link>javascript:alert(1)</link>
+      <guid>javascript:alert(1)</guid>
+      <pubDate>Thu, 21 Aug 2025 12:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Should be rejected.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Duplicate of older post</title>
+      <link>https://medium.com/@lohithprasannateja/older-post-aaaa1111?source=rss</link>
+      <guid isPermaLink="false">https://medium.com/p/aaaa1111</guid>
+      <pubDate>Mon, 01 Jan 2024 12:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Duplicate should be dropped.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

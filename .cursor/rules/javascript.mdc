@@ -1,0 +1,28 @@
+---
+description: Browser and Vercel function JavaScript conventions
+globs: "**/*.js"
+alwaysApply: false
+---
+
+# JavaScript
+
+- Use modern browser-supported JavaScript. `script.js` and `admin/**/*.js` are browser code. Files in `/api` and `/lib` are Node.js CommonJS.
+- Prefer `const`. Use `let` only when reassigning. Do not use `var`.
+- Use `===` and `!==`. Use descriptive names and keep functions small.
+- Avoid new globals. Do not use `eval` or the `Function` constructor.
+- Do not use inline event handlers. Do not add a second `DOMContentLoaded` listener.
+- Treat remote data as untrusted. Allow only `http:` and `https:` before setting `href` or `src`.
+- Display external text with `textContent`. Never put unsanitized feed or API content in `innerHTML`.
+- Handle async failures explicitly. Use `AbortController` or a timeout for external requests.
+- Preserve current site behavior when adding a feature.
+- Remove debug logging before production. Keep useful `console.error` logging. Do not swallow errors.
+- Do not add a dependency when the browser or the platform already provides the behavior.
+
+```javascript
+const href = sanitizeOrNormalizeUrl(post.link);
+if (!href) {
+  return null;
+}
+link.href = href;
+title.textContent = post.title;
+```

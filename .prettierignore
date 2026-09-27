@@ -1,0 +1,22 @@
+node_modules
+.vercel
+coverage
+
+# Generated or binary portfolio files
+documents
+images
+icons
+*.pdf
+pnpm-lock.yaml
+vercel.json
+
+# Pre-existing Medium snapshot workflow. Not reformatted with this change.
+.github/workflows/update-medium-posts.yml
+
+# Legacy application files stay unformatted until a dedicated pass.
+# See LEGACY.md.
+index.html
+styles.css
+script.js
+data
+scripts
