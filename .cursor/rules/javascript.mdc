@@ -6,7 +6,7 @@ alwaysApply: false
 
 # JavaScript
 
-- Use modern browser-supported JavaScript. `script.js` is browser code. Files in `/api` are Node.js CommonJS.
+- Use modern browser-supported JavaScript. `script.js` and `admin/**/*.js` are browser code. Files in `/api` and `/lib` are Node.js CommonJS.
 - Prefer `const`. Use `let` only when reassigning. Do not use `var`.
 - Use `===` and `!==`. Use descriptive names and keep functions small.
 - Avoid new globals. Do not use `eval` or the `Function` constructor.

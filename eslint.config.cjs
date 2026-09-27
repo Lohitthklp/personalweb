@@ -25,13 +25,22 @@ module.exports = [
         rules: sharedRules
     },
     {
-        files: ['api/**/*.js'],
+        files: ['api/**/*.js', 'lib/**/*.js'],
         languageOptions: {
             ecmaVersion: 2022,
             sourceType: 'commonjs',
             globals: {
                 ...globals.node
             }
+        },
+        rules: sharedRules
+    },
+    {
+        files: ['admin/**/*.js'],
+        languageOptions: {
+            ecmaVersion: 2022,
+            sourceType: 'script',
+            globals: globals.browser
         },
         rules: sharedRules
     }

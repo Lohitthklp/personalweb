@@ -950,5 +950,46 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(writingSection);
     }
 
+    function recordPortfolioVisit() {
+        const host = window.location.hostname;
+        if (
+            window.location.protocol === 'file:' ||
+            host === 'localhost' ||
+            host === '127.0.0.1' ||
+            host === '[::1]' ||
+            host === ''
+        ) {
+            return;
+        }
+
+        let external = false;
+        if (document.referrer) {
+            try {
+                external = new URL(document.referrer).hostname !== host;
+            } catch {
+                external = false;
+            }
+        }
+
+        fetch('/api/visit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ external: external }),
+            keepalive: true,
+            credentials: 'same-origin'
+        }).catch(function(err) {
+            console.error('Visit could not be recorded.', err && err.message ? err.message : err);
+        });
+    }
+
+    function schedulePortfolioVisit() {
+        if (document.prerendering) {
+            document.addEventListener('prerenderingchange', recordPortfolioVisit, { once: true });
+            return;
+        }
+        recordPortfolioVisit();
+    }
+
     initializeMediumFeed();
+    schedulePortfolioVisit();
 });
