@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Single item feed</title>
+    <item>
+      <title>Understanding Similarity Measures in Data Science and Analytics</title>
+      <link>https://medium.com/@lohithprasannateja/understanding-similarity-measures-metrics-in-data-science-d6b4a686676b</link>
+      <guid isPermaLink="false">https://medium.com/p/d6b4a686676b</guid>
+      <dc:creator>Lohith</dc:creator>
+      <pubDate>Fri, 14 Mar 2025 18:00:00 GMT</pubDate>
+      <category>Data Science</category>
+      <content:encoded><![CDATA[<p>Distance metrics and similarity measures.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+{
+    "extends": ["html-validate:recommended"],
+    "elements": ["html5"],
+    "rules": {
+        "no-inline-style": "off",
+        "no-trailing-whitespace": "off",
+        "void-style": "off",
+        "tel-non-breaking": "off",
+        "wcag/h63": "off",
+        "heading-level": "off",
+        "prefer-native-element": "off",
+        "script-type": "off",
+        "no-redundant-role": "off",
+        "no-implicit-button-type": "off",
+        "aria-label-misuse": "off",
+        "attribute-allowed-values": "off",
+        "no-raw-characters": "off",
+        "element-required-attributes": "off",
+        "no-deprecated-attr": "off",
+        "element-permitted-content": "off"
+    }
+}

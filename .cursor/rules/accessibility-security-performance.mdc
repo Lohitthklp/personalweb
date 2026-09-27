@@ -1,0 +1,29 @@
+---
+description: Accessibility, security, and performance constraints for portfolio changes
+alwaysApply: true
+---
+
+# Accessibility
+
+- All functionality must work with a keyboard, and focus indicators must stay visible.
+- Dynamic status messages use an appropriate `aria-live` region.
+- Interactive elements need accessible names.
+- Do not use color as the only way to show state.
+- Text and controls must stay readable in light and dark themes.
+- Respect `prefers-reduced-motion`. Do not add automatic motion that changes layout.
+
+# Security
+
+- Treat RSS, APIs, query parameters, and other remote content as untrusted.
+- Allow only expected URL protocols such as `http` and `https`.
+- Do not put credentials or secrets in frontend code, and do not commit environment files that contain secrets.
+- Do not execute third-party feed content or inject external scripts without an explicit reason.
+- Add a dependency only after checking that it is necessary and reviewing its security impact.
+
+# Performance
+
+- Do not block the first render for secondary content such as the Medium list.
+- Lazy-load noncritical images and avoid duplicate network requests.
+- Cache serverless responses when the content can be reused.
+- Avoid extra libraries and avoidable layout shifts.
+- Keep reduced-data and reduced-motion behavior intact when practical.

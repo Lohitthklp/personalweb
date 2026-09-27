@@ -1,0 +1,24 @@
+---
+description: CSS conventions for new portfolio styles
+globs: "**/*.css"
+alwaysApply: false
+---
+
+# CSS
+
+- Reuse the existing design language. Do not add a CSS framework.
+- Do not refactor design tokens as part of an unrelated feature.
+- Use clear, feature-specific class names that do not collide with existing classes.
+- Avoid `!important` and selectors so specific they are hard to override.
+- New components must work in light and dark themes (`body.dark-theme`) and at mobile widths.
+- Avoid horizontal overflow.
+- New motion must honor `prefers-reduced-motion`. Prefer `transform` and `opacity`.
+- Do not add automatic motion that changes layout.
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  .writing-new-badge {
+    animation: none;
+  }
+}
+```

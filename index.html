@@ -7,9 +7,9 @@
         <meta name="keywords" content="Lohith Prasanna Teja Kakumanu, Applied AI Engineer, Data Scientist, LLM, AI Systems, MLOps, Portfolio">
         <title>lohithpr</title> <!-- Updated title -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500;700&display=swap">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css?v=20260927k">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <script src="script.js" defer></script>
+        <script src="script.js?v=20260927h" defer></script>
         <link rel="icon" type="image/svg+xml" href="icons/brand-mark.svg">
     </head>
     
@@ -25,6 +25,7 @@
             <li><a href="#approach" aria-label="Approach">Approach</a></li>
             <li><a href="#experience" aria-label="Experience">Experience</a></li>
             <li><a href="#projects" aria-label="Projects">Projects</a></li>
+            <li><a href="#writing" aria-label="Writing">Writing</a></li>
             <li><a href="#contact" aria-label="Contact">Contact</a></li>
             <li><a href="#" aria-label="Resume" class="glow" id="resume-link">Resume</a></li>
             <li class="dropdown">
@@ -34,10 +35,7 @@
                 <div class="dropdown-content">
                     <a href="#" id="achievements-link" aria-label="Achievements">
                         <svg class="dropdown-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M4.5 2h9v5.5a4.5 4.5 0 0 1-9 0V2z"/>
-                            <path d="M4.5 4H2.5v.6c0 1.8.9 3.1 2 3.7"/>
-                            <path d="M13.5 4h2v.6c0 1.8-.9 3.1-2 3.7"/>
-                            <path d="M9 12.5v3.5M6.5 16h5"/>
+                            <path d="M5 2.5h8a1 1 0 0 1 1 1V15l-5-2.2L4 15V3.5a1 1 0 0 1 1-1z"/>
                         </svg>
                         <span class="dropdown-label">Achievements</span>
                     </a>
@@ -66,10 +64,12 @@
             <p class="intro-role">Senior Data Scientist</p>
             <p class="intro-tagline">I build production-ready AI systems that combine machine learning, data engineering, and evaluation-first design to solve high-impact business problems.</p>
             <div class="hero-highlights">
-                <span>LLM Applications</span>
-                <span>Agent Orchestration</span>
+                <span>Production AI</span>
+                <span>ML &amp; LLM Applications</span>
+                <span>AI Guardrails &amp; Observability</span>
                 <span>Evaluation Frameworks</span>
-                <span>Production AI Architecture</span>
+                <span>Agentic Systems</span>
+                <span>Demo to Production</span>
             </div>
             <img src="profile.png" alt="Lohith Prasanna Teja Kakumanu">
         </div>
@@ -150,7 +150,7 @@
     </div>
 
     <section id="skills" class="fade-in">
-        <h2>Technical Strengths</h2>
+        <h2 class="scroll-reveal">Technical Strengths</h2>
         <p class="section-intro">I focus on the full AI lifecycle, from business framing to production operation.</p>
         <div class="skills-groups">
             <article class="skill-group">
@@ -171,13 +171,13 @@
             </article>
             <article class="skill-group">
                 <h3>Cloud and Infrastructure</h3>
-                <p>AWS and Azure deployment patterns, SageMaker, monitoring, performance optimization, and architecture decisions that hold up under production load.</p>
+                <p>AWS and Azure deployment, k8s, CI/CD, SageMaker, monitoring, and production architecture that holds under load.</p>
             </article>
         </div>
     </section>
 
     <section id="approach" class="fade-in approach-section">
-        <h2>How I Build AI Systems</h2>
+        <h2 class="scroll-reveal">How I Build AI Systems</h2>
         <p class="section-intro">My process is designed to keep research quality and production reality aligned.</p>
         <div class="approach-grid">
             <article class="approach-step">
@@ -190,7 +190,7 @@
             </article>
             <article class="approach-step">
                 <h3>3. Modeling Strategy</h3>
-                <p>Select model and architecture by trade-offs: quality, latency, cost, interpretability, and failure modes.</p>
+                <p>Build the model and architecture around the trade-offs: quality, latency, cost, interpretability, and failure modes.</p>
             </article>
             <article class="approach-step">
                 <h3>4. Evaluation</h3>
@@ -205,12 +205,13 @@
 
 
     <section id="experience" class="fade-in">
-        <h2>Experience</h2>
+        <h2 class="scroll-reveal">Experience</h2>
         <p class="section-intro">I architect production AI systems for messy, high-stakes environments where data quality, reliability, and decision speed all matter at once.</p>
-        <div class="domain-showcase" aria-label="Domains worked across">
+        <div class="domain-showcase scroll-reveal" aria-label="Domains worked across">
             <p class="domain-showcase-title">Domain Coverage</p>
             <div class="domain-chips">
                 <span>Financial Services</span>
+                <span>AWM <span class="writing-new-badge domain-awm-new">NEW</span></span>
                 <span>Risk & Compliance</span>
                 <span>Fraud & Blockchain</span>
                 <span>Enterprise AI Platforms</span>
@@ -266,10 +267,10 @@
                     </div>
                     <div class="experience-business-note">The work wasn't building a chatbot. It was designing the architecture that lets an enterprise actually ship one.</div>
                     <div class="impact-lines">
-                        <p><strong>Beyond chatbots:</strong> the real scope was system design — how retrieval, orchestration, evaluation, and governance layers connect into something an enterprise can run, audit, and trust.</p>
+                        <p><strong>Beyond chatbots:</strong> the scope was system design — retrieval, orchestration, evaluation, and governance an enterprise can run, audit, and trust. A follow-up had to keep the thread, rewrite the question, and drop stale context, and the source the business named had to reach the answer alongside whatever else was retrieved.</p>
                         <p><strong>Demo to MVP to production:</strong> moved fast, but every prototype decision was a future production constraint. Speed without architectural discipline just accelerates the wrong thing.</p>
                         <p><strong>Architecture over features:</strong> agent workflows break at ambiguity, not at capability. Designed the containment layer first — what the system does when it doesn't know, not just when it does.</p>
-                        <p><strong>The actual hard problem:</strong> trace visibility, policy-aware retrieval, and evaluation pipelines aren't bolt-ons. They have to be designed in — retrofitting observability into a live system is far more expensive than building it right.</p>
+                        <p><strong>The actual hard problem:</strong> trace visibility, policy-aware retrieval, and evaluation pipelines are part of the design, so a live system stays observable from the start.</p>
                     </div>
                 </div>
             </article>
@@ -400,7 +401,7 @@
     </section>
     
     <section id="projects" class="fade-in">
-        <h2>Selected Case Studies</h2>
+        <h2 class="scroll-reveal">Selected Case Studies</h2>
         <p class="section-intro">Personal work built on one discipline: understand the problem deeply before touching the model. Each project taught me how to frame, research, and communicate. Not just execute.</p>
         <div class="projects-container">
             <div class="project-card">
@@ -425,7 +426,7 @@
                 <p class="case-line"><strong>Approach:</strong> Built Twitter sentiment analysis pipelines and integrated forecasting features to estimate election trend movement.</p>
                 <p class="case-line"><strong>Impact:</strong> Improved interpretability of political momentum signals and supported more responsive forecasting.</p>
                 <p><strong>Tech:</strong> Python, NLP, sentiment analysis, time-series modeling</p>
-                <a class="project-doc-link" href="documents/Presidential%20Election%20Forecasting%20based%20on%20%20Sentiment%20Analysis.pdf" target="_blank" rel="noopener noreferrer">View publication (PDF) ↗</a>
+                <a class="project-doc-link" href="documents/Presidential%20Election%20Forecasting%20based%20on%20%20Sentiment%20Analysis.pdf" target="_blank" rel="noopener noreferrer">View findings (PDF) ↗</a>
                 <div class="tags">
                     <span>#ElectionForecasting</span><span>#SentimentAnalysis</span><span>#NLP</span>
                 </div>
@@ -466,7 +467,7 @@
                 <p class="case-line"><strong>Approach:</strong> Studied robustness patterns and interpretability behavior in multimodal deep learning architectures under controlled stress conditions.</p>
                 <p class="case-line"><strong>Impact:</strong> Produced reproducible findings that improve model-governance readiness and safer deployment decisions.</p>
                 <p><strong>Tech:</strong> PyTorch, multimodal deep learning, interpretability analysis, robustness evaluation</p>
-                <a class="project-doc-link" href="documents/EXPLORING%20ROBUSTNESS%20OF%20MULTIMODAL%20DEEP%20LEARNING%20ARCHITECTURE.pdf" target="_blank" rel="noopener noreferrer">View publication (PDF) ↗</a>
+                <a class="project-doc-link" href="documents/EXPLORING%20ROBUSTNESS%20OF%20MULTIMODAL%20DEEP%20LEARNING%20ARCHITECTURE.pdf" target="_blank" rel="noopener noreferrer">View findings (PDF) ↗</a>
                 <div class="tags">
                     <span>#MultimodalAI</span><span>#Robustness</span><span>#Interpretability</span>
                 </div>
@@ -503,7 +504,7 @@
     <section id="writing" class="fade-in writing-section">
         <details class="writing-toggle">
             <summary class="writing-summary">
-                <h2>Writing &amp; Thinking</h2>
+                <h2 class="scroll-reveal">Writing &amp; Thinking</h2>
                 <span class="writing-arrow" aria-hidden="true">
                     <svg viewBox="0 0 10 16" width="10" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 2l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -513,20 +514,30 @@
             <div class="writing-body">
                 <p class="section-intro">Posts and reflections I've shared publicly, on learning, systems, and what the work actually teaches you.</p>
                 <div class="writing-feed-wrap">
-                    <div class="writing-feed">
-                        <article class="writing-card">
-                            <span class="writing-platform medium-badge">Medium</span>
-                            <h3 class="writing-title">Understanding Similarity Measures in Data Science</h3>
-                            <p class="writing-excerpt">An exploration of distance metrics (cosine similarity, Euclidean, Manhattan) and how they map to intuitions from everyday life. Written to make abstract math feel grounded and usable.</p>
-                            <a class="writing-link" href="https://medium.com/@lohithprasannateja/understanding-similarity-measures-metrics-in-data-science-d6b4a686676b" target="_blank" rel="noopener noreferrer">Read on Medium ↗</a>
-                        </article>
+                    <div
+                        id="medium-feed"
+                        class="writing-feed writing-feed-medium"
+                        role="region"
+                        aria-label="Medium articles"
+                        data-medium-profile="https://medium.com/@lohithprasannateja"
+                        data-medium-api="/api/medium"
+                    >
+                        <div class="writing-medium-fallback">
+                            <article class="writing-card">
+                                <span class="writing-platform medium-badge">Medium</span>
+                                <h3 class="writing-title">Understanding Similarity Measures in Data Science</h3>
+                                <p class="writing-excerpt">An exploration of distance metrics (cosine similarity, Euclidean, Manhattan) and how they map to intuitions from everyday life. Written to make abstract math feel grounded and usable.</p>
+                                <a class="writing-link" href="https://medium.com/@lohithprasannateja/understanding-similarity-measures-metrics-in-data-science-d6b4a686676b" target="_blank" rel="noopener noreferrer">Read on Medium ↗</a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="writing-feed writing-feed-linkedin">
                         <article class="writing-card">
                             <span class="writing-platform linkedin-badge">LinkedIn</span>
                             <h3 class="writing-title">Amazon Applied Scientist Interview: What I Actually Learned</h3>
                             <p class="writing-excerpt">I wasn't selected, and that clarity was useful. Honest reflections on ML depth, where I got stuck (Autoencoders, loss functions), and why every interview is a diagnostic, not just a verdict.</p>
                             <a class="writing-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7313684208571355138/?originTrackingId=NZurxChCJ055tzaJYb8BrQ%3D%3D" target="_blank" rel="noopener noreferrer">Read on LinkedIn ↗</a>
                         </article>
-
                     </div>
                 </div>
             </div>
@@ -539,7 +550,7 @@
             <span class="orb orb-two"></span>
             <span class="orb orb-three"></span>
         </div>
-        <h2>Contact</h2>
+        <h2 class="scroll-reveal">Contact</h2>
         <p class="section-intro">Open to meaningful conversations around data science work, practical problem-solving, and career growth.</p>
         <div class="contact-stage">
             <div class="contact-panel">
@@ -613,8 +624,7 @@
                 <button class="achievement-card" id="certifications-link" aria-label="Microsoft Certifications">
                     <span class="ach-icon-wrap" aria-hidden="true">
                         <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M11 2L4 5.5v5c0 4.2 3 7.8 7 8.8 4-1 7-4.6 7-8.8v-5z"/>
-                            <path d="M8 11l2 2 4-4"/>
+                            <path d="M4.5 11.5l4.2 4.2L17.5 6.5"/>
                         </svg>
                     </span>
                     <div class="ach-info">
@@ -626,9 +636,7 @@
                 <button class="achievement-card" id="award-link" aria-label="Infosys Award">
                     <span class="ach-icon-wrap" aria-hidden="true">
                         <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="14" r="5.5"/>
-                            <path d="M7.5 3h7l-1.5 4.5H9z"/>
-                            <path d="M9 7.5l2 6.5M13 7.5l-2 6.5"/>
+                            <path d="M11 3.5l4.6 7.5L11 18.5 6.4 11z"/>
                         </svg>
                     </span>
                     <div class="ach-info">
@@ -640,10 +648,8 @@
                 <button class="achievement-card" id="licenses-link" aria-label="Infosys Licenses">
                     <span class="ach-icon-wrap" aria-hidden="true">
                         <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="5" width="18" height="12" rx="2"/>
-                            <circle cx="8" cy="11" r="2.5"/>
-                            <line x1="13" y1="9" x2="18" y2="9"/>
-                            <line x1="13" y1="13" x2="18" y2="13"/>
+                            <rect x="4" y="3.5" width="14" height="15" rx="1.5"/>
+                            <path d="M7.5 8.5h7M7.5 12h7M7.5 15.5h4"/>
                         </svg>
                     </span>
                     <div class="ach-info">
@@ -655,9 +661,8 @@
                 <button class="achievement-card" id="suny-certificate-link" aria-label="SUNY Startup Summer School Certificate">
                     <span class="ach-icon-wrap" aria-hidden="true">
                         <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 9l9-4.5 9 4.5-9 4.5z"/>
-                            <path d="M6.5 11.5v4.5a9 3 0 0 0 9 0v-4.5"/>
-                            <line x1="20" y1="9" x2="20" y2="14"/>
+                            <path d="M6 3.5h7.2L17 7.2V18.5H6z"/>
+                            <path d="M13 3.5V7.2H17"/>
                         </svg>
                     </span>
                     <div class="ach-info">
@@ -697,15 +702,15 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Stack</span>
-                    <span class="info-value">HTML · CSS · Vanilla JS · Anime.js</span>
+                    <span class="info-value">HTML, CSS, vanilla JavaScript, Anime.js</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">AI Assist</span>
-                    <span class="info-value">ChatGPT used for optimization &amp; content refinement</span>
+                    <span class="info-label">Build</span>
+                    <span class="info-value">Accelerated development in Cursor</span>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Published</span>
-                    <span class="info-value">University at Buffalo, The State University of New York</span>
+                    <span class="info-label">Host</span>
+                    <span class="info-value">Vercel</span>
                 </div>
             </div>
         </div>
