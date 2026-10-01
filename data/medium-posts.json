@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T22:01:24Z",
+  "generatedAt": "2026-10-01T12:45:32Z",
   "source": "https://medium.com/feed/@lohithprasannateja",
   "profileUrl": "https://medium.com/@lohithprasannateja",
   "posts": [
@@ -22,7 +22,7 @@
     {
       "id": "https://medium.com/p/032a19f6d662",
       "title": "Why Is the Model Not Always the First Suspect? (FAQ Sets)",
-      "url": "https://medium.com/p/032a19f6d662",
+      "url": "https://medium.com/@lohithprasannateja/why-is-the-model-not-always-the-first-suspect-faq-sets-032a19f6d662",
       "author": "Lohith Prasanna Teja Kakumanu",
       "publishedAt": "2026-09-25T23:12:49Z",
       "excerpt": "The questions that stay after the answer looks wrong, before you start swapping models. Some of these came up while writing the first article. Others did not need to interrupt the main story, but still matter once an AI…",
@@ -38,7 +38,7 @@
     {
       "id": "https://medium.com/p/fd0cd86aaf43",
       "title": "What Actually Changes When an AI Feature Becomes a Production System",
-      "url": "https://medium.com/p/fd0cd86aaf43",
+      "url": "https://medium.com/@lohithprasannateja/what-actually-changes-when-an-ai-feature-becomes-a-production-system-fd0cd86aaf43",
       "author": "Lohith Prasanna Teja Kakumanu",
       "publishedAt": "2026-09-19T04:27:24Z",
       "excerpt": "An Enterprise Data Scientist’s Guide for Enterprise Application Systems Hi Reader, It’s been a while to get back on track, I wanted to start this series with something that changed gradually in the way I think about AI…",
