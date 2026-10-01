@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-10-01T12:45:32Z",
+  "generatedAt": "2026-10-01T22:29:28Z",
   "source": "https://medium.com/feed/@lohithprasannateja",
   "profileUrl": "https://medium.com/@lohithprasannateja",
   "posts": [
+    {
+      "id": "https://medium.com/p/02107e84cbba",
+      "title": "What an AI Request Decides Before a RAG Search",
+      "url": "https://medium.com/@lohithprasannateja/what-an-ai-request-decides-before-a-rag-search-02107e84cbba",
+      "author": "Lohith Prasanna Teja Kakumanu",
+      "publishedAt": "2026-10-01T19:01:51Z",
+      "excerpt": "A RAG answer can already be wrong in the conversation, the transformed question, or the cache. These are the checks to open before you edit the prompt. Hey, still with me? Good. The last piece used an expense question…",
+      "image": "https://cdn-images-1.medium.com/max/1024/0*mIQJ8cGLzif-3Q5v",
+      "tags": [
+        "system-design-interview",
+        "rags",
+        "programming",
+        "ai",
+        "enterprise-architecture"
+      ]
+    },
     {
       "id": "https://medium.com/p/b18206e336bb",
       "title": "What has to happen before an AI answer exists",
@@ -38,7 +54,7 @@
     {
       "id": "https://medium.com/p/fd0cd86aaf43",
       "title": "What Actually Changes When an AI Feature Becomes a Production System",
-      "url": "https://medium.com/@lohithprasannateja/what-actually-changes-when-an-ai-feature-becomes-a-production-system-fd0cd86aaf43",
+      "url": "https://medium.com/p/fd0cd86aaf43",
       "author": "Lohith Prasanna Teja Kakumanu",
       "publishedAt": "2026-09-19T04:27:24Z",
       "excerpt": "An Enterprise Data Scientist’s Guide for Enterprise Application Systems Hi Reader, It’s been a while to get back on track, I wanted to start this series with something that changed gradually in the way I think about AI…",
