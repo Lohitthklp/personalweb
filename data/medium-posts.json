@@ -1,22 +1,38 @@
 {
-  "generatedAt": "2026-10-02T12:09:27Z",
+  "generatedAt": "2026-10-02T21:59:23Z",
   "source": "https://medium.com/feed/@lohithprasannateja",
   "profileUrl": "https://medium.com/@lohithprasannateja",
   "posts": [
     {
+      "id": "https://medium.com/p/1caef5af17c1",
+      "title": "Understanding Similarity Measures / Metrics in Data Science",
+      "url": "https://medium.com/p/1caef5af17c1",
+      "author": "Lohith Prasanna Teja Kakumanu",
+      "publishedAt": "2026-10-02T13:31:01Z",
+      "excerpt": "I’m writing this blog to give you a quick glimpse of the Similarity Metrics that we use in industry covering about why we need them, when do we use, what’s the intuition behind each metric and ending with some bonus tip…",
+      "image": "https://cdn-images-1.medium.com/max/478/1*s4QFEBHFuEGnfOSzS7NQqg.png",
+      "tags": [
+        "data-science",
+        "cosine-similarity",
+        "euclidean-distance",
+        "metrics",
+        "similarity-metrics"
+      ]
+    },
+    {
       "id": "https://medium.com/p/02107e84cbba",
       "title": "What an AI Request Decides Before a RAG Search",
-      "url": "https://medium.com/@lohithprasannateja/what-an-ai-request-decides-before-a-rag-search-02107e84cbba",
+      "url": "https://medium.com/p/02107e84cbba",
       "author": "Lohith Prasanna Teja Kakumanu",
       "publishedAt": "2026-10-01T19:01:51Z",
       "excerpt": "A RAG answer can already be wrong in the conversation, the transformed question, or the cache. These are the checks to open before you edit the prompt. Hey, still with me? Good. The last piece used an expense question…",
       "image": "https://cdn-images-1.medium.com/max/1024/0*mIQJ8cGLzif-3Q5v",
       "tags": [
-        "system-design-interview",
+        "data-science",
         "rags",
         "programming",
-        "ai",
-        "enterprise-architecture"
+        "statistics",
+        "ai"
       ]
     },
     {
@@ -37,15 +53,15 @@
     },
     {
       "id": "https://medium.com/p/032a19f6d662",
-      "title": "Why Is the Model Not Always the First Suspect? (FAQ Sets)",
-      "url": "https://medium.com/@lohithprasannateja/why-is-the-model-not-always-the-first-suspect-faq-sets-032a19f6d662",
+      "title": "Why Is the Model Not Always the First Suspect? (FAQs)",
+      "url": "https://medium.com/p/032a19f6d662",
       "author": "Lohith Prasanna Teja Kakumanu",
       "publishedAt": "2026-09-25T23:12:49Z",
-      "excerpt": "The questions that stay after the answer looks wrong, before you start swapping models. Some of these came up while writing the first article. Others did not need to interrupt the main story, but still matter once an AI…",
+      "excerpt": "The questions that stay after the answer looks wrong, before you start swapping models and Is RAG DEAD? Some of these came up while writing the first article. Others did not need to interrupt the main story, but still…",
       "image": "https://cdn-images-1.medium.com/max/1024/0*Mq_WP-bgTziVoxQu",
       "tags": [
+        "artificial-intelligence",
         "programming",
-        "software-engineering",
         "data-science",
         "technology",
         "ai"
@@ -54,17 +70,17 @@
     {
       "id": "https://medium.com/p/fd0cd86aaf43",
       "title": "What Actually Changes When an AI Feature Becomes a Production System",
-      "url": "https://medium.com/@lohithprasannateja/what-actually-changes-when-an-ai-feature-becomes-a-production-system-fd0cd86aaf43",
+      "url": "https://medium.com/p/fd0cd86aaf43",
       "author": "Lohith Prasanna Teja Kakumanu",
       "publishedAt": "2026-09-19T04:27:24Z",
       "excerpt": "An Enterprise Data Scientist’s Guide for Enterprise Application Systems Hi Reader, It’s been a while to get back on track, I wanted to start this series with something that changed gradually in the way I think about AI…",
       "image": "https://cdn-images-1.medium.com/max/1024/1*JLtfFVdFPh-RpqNt4vPcCg.png",
       "tags": [
-        "rags",
         "data-science",
         "ai",
-        "ai-production",
-        "towards-data-science"
+        "statistics",
+        "bayesian-statistics",
+        "artificial-intelligence"
       ]
     },
     {
