@@ -1,8 +1,23 @@
 {
-  "generatedAt": "2026-10-10T12:09:13Z",
+  "generatedAt": "2026-10-13T00:21:24Z",
   "source": "https://medium.com/feed/@lohithprasannateja",
   "profileUrl": "https://medium.com/@lohithprasannateja",
   "posts": [
+    {
+      "id": "https://medium.com/p/6ad4236073c6",
+      "title": "Your RAG pipeline processed/indexed the document. Why can’t retrieval find it?",
+      "url": "https://medium.com/p/6ad4236073c6",
+      "author": "Lohith Prasanna Teja Kakumanu",
+      "publishedAt": "2026-10-12T15:24:48Z",
+      "excerpt": "The quiet gaps between processing, indexing, and the evidence your RAG answer can actually use. Hello people, welcome back. If you have already built a production RAG system, this failure may sound familiar. The source…",
+      "image": "https://cdn-images-1.medium.com/max/1024/0*i1_sYLk9y8sd3XFE",
+      "tags": [
+        "llm",
+        "rags",
+        "artificial-intelligence",
+        "ai-engineering"
+      ]
+    },
     {
       "id": "https://medium.com/p/1caef5af17c1",
       "title": "Understanding Similarity Measures / Metrics in Data Science",
