@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-13T00:21:24Z",
+  "generatedAt": "2026-10-13T13:51:30Z",
   "source": "https://medium.com/feed/@lohithprasannateja",
   "profileUrl": "https://medium.com/@lohithprasannateja",
   "posts": [
     {
       "id": "https://medium.com/p/6ad4236073c6",
       "title": "Your RAG pipeline processed/indexed the document. Why can’t retrieval find it?",
-      "url": "https://medium.com/p/6ad4236073c6",
+      "url": "https://medium.com/@lohithprasannateja/your-rag-pipeline-processed-indexed-the-document-why-cant-retrieval-find-it-6ad4236073c6",
       "author": "Lohith Prasanna Teja Kakumanu",
       "publishedAt": "2026-10-12T15:24:48Z",
       "excerpt": "The quiet gaps between processing, indexing, and the evidence your RAG answer can actually use. Hello people, welcome back. If you have already built a production RAG system, this failure may sound familiar. The source…",
